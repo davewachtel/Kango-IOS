@@ -31,6 +31,7 @@ class CLDraggableView: UIView
         self.initialize();
     }
     
+    /*
     override init(frame: CGRect) {
         
         self.panGestureRecognizer = UIPanGestureRecognizer();
@@ -42,14 +43,16 @@ class CLDraggableView: UIView
         
         self.initialize();
     }
+    */
     
     func initialize()
     {
+        self.bounds = UIScreen.mainScreen().bounds;
         
         self.panGestureRecognizer.addTarget(self, action: "dragged:");
         self.addGestureRecognizer(self.panGestureRecognizer);
         
-        
+        self.imageView.frame = self.bounds;//UIScreen.mainScreen().bounds;
         self.imageView.contentMode = UIViewContentMode.ScaleAspectFit;
         self.imageView.clipsToBounds = true;
         
@@ -62,7 +65,6 @@ class CLDraggableView: UIView
         
         self.overlayView.frame = self.bounds;
         self.overlayView.alpha = 0;
-        
         self.addSubview(self.overlayView);
     }
     

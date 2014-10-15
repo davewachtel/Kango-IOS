@@ -18,35 +18,41 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
     lazy var api : APIController = APIController(delegate: self)
     
     var draggableView: CLDraggableView;
+    var activityView: UIActivityIndicatorView;
+    
     var swipeImages: Array<UIImage> = [];
+    
+    var notFound:UIImage = UIImage(contentsOfFile: "404");
     
     required init(coder aDecoder: NSCoder) {
         
         self.draggableView = CLDraggableView(coder: aDecoder);
+        self.activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge);
+        
         super.init(coder: aDecoder);
         
         self.draggableView.delegate = self;
     }
     
-    init(frame: CGRect) {
-        
-        self.draggableView = CLDraggableView(frame: frame);
-        super.init();
-        
-        
-        self.draggableView.delegate = self;
-        self.view = self.draggableView;
-    }
-    
+    //Start
     override func loadView() {
+        super.loadView();
+        
         self.view = self.draggableView;
+        
+        var centerY = self.view.bounds.size.height / 2;
+        var centerX = self.view.bounds.size.width / 2;
+        
+        self.activityView.bounds = self.view.bounds;
+        
+        self.activityView.center = CGPoint(x: centerX, y: centerY);
+        self.activityView.startAnimating();
+        self.view.addSubview(activityView);
     }
     
+    //Complete
     override func viewDidLoad() {
-        var width = UIScreen.mainScreen().bounds.width;
-        var height = UIScreen.mainScreen().bounds.height;
-        
-        self.draggableView.imageView.frame = CGRect(x: 0, y: 0, width: width, height: height);
+        super.viewDidLoad();
         
         if (self.swipeImages.count == 0) {
             api.getNextContent();
@@ -63,24 +69,23 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
     {
         let url = NSURL.URLWithString(media.url);
         var err: NSError?
-        var imageData :NSData = NSData.dataWithContentsOfURL(url,options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)
+        var imageData :NSData = NSData.dataWithContentsOfURL(url, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err);
         
-        //var imgView:UIImageView = UIImageView();
+        if(imageData.length == 0)
+        {
+            return self.notFound;
+        }
+        
         var img:UIImage = UIImage();
         
         switch(media.mediaTypeId)
         {
             case MediaType.Image.toRaw():
-                
-                //imgView = UIImageView(image: UIImage(data:imageData));
                 img = UIImage(data:imageData);
                 
                 break;
             case MediaType.Animation.toRaw():
-                
-                var gifImg = UIImage.animatedImageWithAnimatedGIFData(imageData);
-                //imgView = UIImageView(image: gifImg);
-                img = gifImg;
+                img = UIImage.animatedImageWithAnimatedGIFData(imageData);
                 
                 break;
         default:
@@ -94,9 +99,13 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
     
     func removeCurrentView()
     {
+        self.draggableView.setImage(self.swipeImages[1]);
+        self.swipeImages.removeAtIndex(0);
         
-        //var swpImg = self.swipeImages.removeAtIndex(self.swipeImages.count - 1);
-        //swpImg.removeFromSuperview();
+        if(self.swipeImages.count <= (self.api.size / 2))
+        {
+            api.getNextContent();
+        }
     }
     
     // MARK: APIControllerProtocol
@@ -114,7 +123,7 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
             
             if(isEmpty && self.swipeImages.count > 0)
             {
-                //self.draggableView.setImage(self.swipeImages[0]);
+                self.activityView.stopAnimating();
                 self.draggableView.setImage(self.swipeImages[0]);
             }
             

@@ -16,7 +16,6 @@
 		8598A8C119A5A3D500D09531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8598A8BF19A5A3D500D09531 /* Main.storyboard */; };
 		8598A8C319A5A3D500D09531 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8598A8C219A5A3D500D09531 /* Images.xcassets */; };
 		8598A8CF19A5A3D500D09531 /* SpatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8CE19A5A3D500D09531 /* SpatterTests.swift */; };
-		8598A8DC19A5A7D800D09531 /* CLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8DB19A5A7D800D09531 /* CLView.swift */; };
 		8598A8DE19A5A7EA00D09531 /* CLDraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8DD19A5A7EA00D09531 /* CLDraggableView.swift */; };
 		8598A8E019A5A93800D09531 /* CLOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8DF19A5A93800D09531 /* CLOverlayView.swift */; };
 		859B71CD19E507E0008D481C /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B71CC19E507E0008D481C /* Media.swift */; };
@@ -52,7 +51,6 @@
 		8598A8C819A5A3D500D09531 /* SpatterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpatterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8598A8CD19A5A3D500D09531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8598A8CE19A5A3D500D09531 /* SpatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpatterTests.swift; sourceTree = "<group>"; };
-		8598A8DB19A5A7D800D09531 /* CLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLView.swift; sourceTree = "<group>"; };
 		8598A8DD19A5A7EA00D09531 /* CLDraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLDraggableView.swift; sourceTree = "<group>"; };
 		8598A8DF19A5A93800D09531 /* CLOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLOverlayView.swift; sourceTree = "<group>"; };
 		859B71CC19E507E0008D481C /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 		8598A8D819A5A7A100D09531 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8598A8DB19A5A7D800D09531 /* CLView.swift */,
 				8598A8DD19A5A7EA00D09531 /* CLDraggableView.swift */,
 				8598A8DF19A5A93800D09531 /* CLOverlayView.swift */,
 			);
@@ -322,7 +319,6 @@
 				8598A8E019A5A93800D09531 /* CLOverlayView.swift in Sources */,
 				852C9E3019D128630036D3FC /* UIImage+animatedGIF.m in Sources */,
 				85A326EB19E4EB32000E1FB5 /* ApiController.swift in Sources */,
-				8598A8DC19A5A7D800D09531 /* CLView.swift in Sources */,
 				8598A8BE19A5A3D500D09531 /* ViewController.swift in Sources */,
 				8598A8BC19A5A3D500D09531 /* AppDelegate.swift in Sources */,
 				859B71CD19E507E0008D481C /* Media.swift in Sources */,
@@ -445,7 +441,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Spatter/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spatter-Bridging-Header.h";
@@ -461,7 +457,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Spatter/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spatter-Bridging-Header.h";
