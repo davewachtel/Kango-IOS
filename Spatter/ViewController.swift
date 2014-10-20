@@ -31,6 +31,11 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
         
         super.init(coder: aDecoder);
         
+        var vBounds = UIScreen.mainScreen().bounds;
+        
+        self.draggableView.bounds = vBounds;
+        self.draggableView.frame = vBounds;
+        
         self.draggableView.delegate = self;
     }
     
@@ -38,14 +43,12 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
     override func loadView() {
         super.loadView();
         
+        self.draggableView.setFrames();
         self.view = self.draggableView;
+    
         
-        var centerY = self.view.bounds.size.height / 2;
-        var centerX = self.view.bounds.size.width / 2;
-        
-        self.activityView.bounds = self.view.bounds;
-        
-        self.activityView.center = CGPoint(x: centerX, y: centerY);
+        self.activityView.bounds = self.view.frame;
+        self.activityView.center = self.view.center;
         self.activityView.startAnimating();
         self.view.addSubview(activityView);
     }
@@ -64,37 +67,44 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
         // Dispose of any resources that can be recreated.
     }
     
-    //func createUIView(media: Media) -> UIImageView
-    func createUIView(media: Media) -> UIImage
+    func downloadMedia(media: Media)
     {
         let url = NSURL.URLWithString(media.url);
-        var err: NSError?
-        var imageData :NSData = NSData.dataWithContentsOfURL(url, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err);
+        var request: NSURLRequest = NSURLRequest(URL:url)
         
-        if(imageData.length == 0)
-        {
-            return self.notFound;
-        }
-        
-        var img:UIImage = UIImage();
-        
-        switch(media.mediaTypeId)
-        {
+        NSURLConnection.sendAsynchronousRequest(request, queue:NSOperationQueue.mainQueue(), completionHandler: {(response : NSURLResponse!, data : NSData!, error : NSError!) in
+            
+            if (error != nil)
+            {
+                return;
+            }
+            
+            
+            var img:UIImage = UIImage();
+            
+            switch(media.mediaTypeId)
+                {
             case MediaType.Image.toRaw():
-                img = UIImage(data:imageData);
-                
+                img = UIImage(data:data);
                 break;
             case MediaType.Animation.toRaw():
-                img = UIImage.animatedImageWithAnimatedGIFData(imageData);
+                img = UIImage.animatedImageWithAnimatedGIFData(data);
                 
                 break;
-        default:
+            default:
                 NSException(name: "Not Supported", reason: "This media type is not supported.", userInfo: nil).raise();
                 break;
-        }
+            }
+            
+            var isEmpty = (self.swipeImages.count == 0);
+            self.swipeImages.append(img);
+            
+            if(isEmpty){
+                self.draggableView.setImage(img);
+                self.activityView.stopAnimating();
+            }
+        });
         
-        //return imgView;
-        return img;
     }
     
     func removeCurrentView()
@@ -110,28 +120,13 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
     
     // MARK: APIControllerProtocol
     func didReceiveAPIResults(data: NSArray) {
-        dispatch_async(dispatch_get_main_queue(), {
-            var arrMedia = Media.mediaWithJSON(data);
-            
-            var isEmpty = (self.swipeImages.count == 0);
-            
-            for(var i = 0; i < arrMedia.count; i++)
-            {
-                var v = self.createUIView(arrMedia[i]);
-                self.swipeImages.append(v);
-            }
-            
-            if(isEmpty && self.swipeImages.count > 0)
-            {
-                self.activityView.stopAnimating();
-                self.draggableView.setImage(self.swipeImages[0]);
-            }
-            
-
-            
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        })
+        
+        var arrMedia = Media.mediaWithJSON(data);
+        
+        for(var i = 0; i < arrMedia.count; i++)
+        {
+            self.downloadMedia(arrMedia[i]);
+        }
     }
-
 }
 

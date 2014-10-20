@@ -31,31 +31,18 @@ class CLDraggableView: UIView
         self.initialize();
     }
     
-    /*
-    override init(frame: CGRect) {
-        
-        self.panGestureRecognizer = UIPanGestureRecognizer();
-        self.originalPoint = CGPoint();
-        self.overlayView = CLOverlayView(frame: frame);
-        self.imageView = UIImageView(frame: frame);
-        
-        super.init(frame: frame);
-        
-        self.initialize();
+    func setFrames()
+    {
+        self.overlayView.frame = self.bounds;
     }
-    */
     
     func initialize()
     {
-        self.bounds = UIScreen.mainScreen().bounds;
-        
         self.panGestureRecognizer.addTarget(self, action: "dragged:");
         self.addGestureRecognizer(self.panGestureRecognizer);
         
-        self.imageView.frame = self.bounds;//UIScreen.mainScreen().bounds;
         self.imageView.contentMode = UIViewContentMode.ScaleAspectFit;
         self.imageView.clipsToBounds = true;
-        
         self.addSubview(self.imageView);
         
         self.layer.cornerRadius = 8;
@@ -63,20 +50,48 @@ class CLDraggableView: UIView
         self.layer.shadowRadius = 5;
         self.layer.shadowOpacity = 0.5;
         
-        self.overlayView.frame = self.bounds;
         self.overlayView.alpha = 0;
         self.addSubview(self.overlayView);
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews();
+        
+        self.centerImageView();
+    }
     
-    //func setImage(img: UIImageView)
+    func centerImageView()
+    {
+        var boundsSize = self.bounds.size;
+        var frameToCenter = self.imageView.frame;
+        
+        // center horizontally
+        if (frameToCenter.size.width < boundsSize.width){
+            frameToCenter.origin.x = (boundsSize.width - frameToCenter.size.width) / 2;
+        }else{
+            frameToCenter.origin.x = 0;
+        }
+        // center vertically
+        if (frameToCenter.size.height < boundsSize.height){
+            frameToCenter.origin.y = (boundsSize.height - frameToCenter.size.height) / 2;
+        }else{
+            frameToCenter.origin.y = 0;
+        }
+        self.imageView.frame = frameToCenter;
+    }
+    
+    
     func setImage(img: UIImage)
     {
         self.imageView.image = img;
+        self.imageView.frame = CGRect(origin: self.bounds.origin, size: img.size);
+        
+        self.centerImageView();
     }
 
     func dragged(rec: UIGestureRecognizer)
     {
+        
         var xDistance = self.panGestureRecognizer.translationInView(self).x;
         var yDistance = self.panGestureRecognizer.translationInView(self).y;
         
@@ -112,6 +127,7 @@ class CLDraggableView: UIView
         case UIGestureRecognizerState.Failed:
             break;
         }
+        
     }
     
     func updateOverlay(distance: CGFloat)

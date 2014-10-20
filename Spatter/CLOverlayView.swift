@@ -27,23 +27,7 @@ class CLOverlayView : UIView
         super.init(coder: aDecoder);
         
         self.addSubview(self.imageView);
-        
-        //self.imageView.contentMode = UIViewContentMode.ScaleAspectFit;
-        self.imageView.frame = CGRectMake(0, 0, 100, 100);
-        
     }
-    
-    /*
-    override init(frame: CGRect) {
-        self.imageView = UIImageView(image: UIImage());
-        self.mode = CLOverlayViewMode.CLOverlayViewModeNone;
-        
-        super.init(frame: frame);
-        
-        self.backgroundColor = UIColor.whiteColor();
-        self.addSubview(self.imageView);
-    }
-    */
     
     func setMode(mode: CLOverlayViewMode)
     {
@@ -62,10 +46,8 @@ class CLOverlayView : UIView
         }
     }
     
-    override func layoutSubviews()
-    {
-        super.layoutSubviews();
+    override func layoutSubviews() {
         
-        
+        self.imageView.frame = CGRectMake(0, 0, 100, 100);
     }
 }
