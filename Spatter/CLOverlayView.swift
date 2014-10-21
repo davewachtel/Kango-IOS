@@ -43,11 +43,12 @@ class CLOverlayView : UIView
             }
             
             self.imageView.image = UIImage(named: imgSrc);
+            self.imageView.contentMode = UIViewContentMode.ScaleAspectFit;
         }
     }
     
     override func layoutSubviews() {
-        
-        self.imageView.frame = CGRectMake(0, 0, 100, 100);
+        self.imageView.frame = self.bounds;
+        //self.imageView.frame = CGRectMake(0, 0, 100, 100);
     }
 }

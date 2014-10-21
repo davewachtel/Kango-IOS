@@ -16,6 +16,7 @@ class CLDraggableView: UIView
     var overlayView: CLOverlayView;
     var imageView: UIImageView;
     
+    
     var delegate:DraggableViewProtocol?;
     
     
@@ -27,13 +28,15 @@ class CLDraggableView: UIView
         self.imageView = UIImageView();
         
         super.init(coder: aDecoder);
-        
         self.initialize();
     }
     
-    func setFrames()
-    {
+    override func layoutSubviews() {
+        super.layoutSubviews();
+        
         self.overlayView.frame = self.bounds;
+        //self.imageView.bounds = self.bounds;
+        self.imageView.frame = self.bounds;
     }
     
     func initialize()
@@ -54,39 +57,11 @@ class CLDraggableView: UIView
         self.addSubview(self.overlayView);
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews();
-        
-        self.centerImageView();
-    }
-    
-    func centerImageView()
-    {
-        var boundsSize = self.bounds.size;
-        var frameToCenter = self.imageView.frame;
-        
-        // center horizontally
-        if (frameToCenter.size.width < boundsSize.width){
-            frameToCenter.origin.x = (boundsSize.width - frameToCenter.size.width) / 2;
-        }else{
-            frameToCenter.origin.x = 0;
-        }
-        // center vertically
-        if (frameToCenter.size.height < boundsSize.height){
-            frameToCenter.origin.y = (boundsSize.height - frameToCenter.size.height) / 2;
-        }else{
-            frameToCenter.origin.y = 0;
-        }
-        self.imageView.frame = frameToCenter;
-    }
-    
-    
     func setImage(img: UIImage)
     {
         self.imageView.image = img;
-        self.imageView.frame = CGRect(origin: self.bounds.origin, size: img.size);
-        
-        self.centerImageView();
+        //self.imageView.frame = CGRect(origin: self.bounds.origin, size: img.size);
+        //self.imageView.frame = self.bounds;
     }
 
     func dragged(rec: UIGestureRecognizer)

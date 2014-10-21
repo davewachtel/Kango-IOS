@@ -20,9 +20,7 @@
 		8598A8E019A5A93800D09531 /* CLOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8DF19A5A93800D09531 /* CLOverlayView.swift */; };
 		859B71CD19E507E0008D481C /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B71CC19E507E0008D481C /* Media.swift */; };
 		85A326EB19E4EB32000E1FB5 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A326EA19E4EB32000E1FB5 /* ApiController.swift */; };
-		85F8F1E319B8170700DFA57B /* pic1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85F8F1E019B8170700DFA57B /* pic1@2x.jpg */; };
-		85F8F1E419B8170700DFA57B /* pic2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85F8F1E119B8170700DFA57B /* pic2@2x.jpg */; };
-		85F8F1E519B8170700DFA57B /* pic3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 85F8F1E219B8170700DFA57B /* pic3.gif */; };
+		85F3CA4119F4A5AD00689BFD /* 404@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85F3CA4019F4A5AD00689BFD /* 404@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +53,7 @@
 		8598A8DF19A5A93800D09531 /* CLOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLOverlayView.swift; sourceTree = "<group>"; };
 		859B71CC19E507E0008D481C /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		85A326EA19E4EB32000E1FB5 /* ApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
-		85F8F1E019B8170700DFA57B /* pic1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "pic1@2x.jpg"; path = "Content/Images/pic1@2x.jpg"; sourceTree = "<group>"; };
-		85F8F1E119B8170700DFA57B /* pic2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "pic2@2x.jpg"; path = "Content/Images/pic2@2x.jpg"; sourceTree = "<group>"; };
-		85F8F1E219B8170700DFA57B /* pic3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pic3.gif; path = Content/Images/pic3.gif; sourceTree = "<group>"; };
+		85F3CA4019F4A5AD00689BFD /* 404@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "404@2x.jpg"; path = "Spatter/3rd Party/404@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +78,7 @@
 		852C9E2819D124E30036D3FC /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
+				85F3CA4019F4A5AD00689BFD /* 404@2x.jpg */,
 				855816AC19D2898000429015 /* cross_300x300@2x.png */,
 				855816AA19D2893600429015 /* checkmark_300x300@2x.png */,
 				852C9E2919D124EB0036D3FC /* GIF */,
@@ -204,9 +201,6 @@
 		85F8F1DF19B8158000DFA57B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				85F8F1E019B8170700DFA57B /* pic1@2x.jpg */,
-				85F8F1E119B8170700DFA57B /* pic2@2x.jpg */,
-				85F8F1E219B8170700DFA57B /* pic3.gif */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -293,12 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8598A8C119A5A3D500D09531 /* Main.storyboard in Resources */,
-				85F8F1E319B8170700DFA57B /* pic1@2x.jpg in Resources */,
+				85F3CA4119F4A5AD00689BFD /* 404@2x.jpg in Resources */,
 				855816AB19D2893600429015 /* checkmark_300x300@2x.png in Resources */,
-				85F8F1E419B8170700DFA57B /* pic2@2x.jpg in Resources */,
 				855816AD19D2898000429015 /* cross_300x300@2x.png in Resources */,
 				8598A8C319A5A3D500D09531 /* Images.xcassets in Resources */,
-				85F8F1E519B8170700DFA57B /* pic3.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,11 +431,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Spatter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spatter-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -455,11 +450,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Spatter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spatter-Bridging-Header.h";
 			};
 			name = Release;

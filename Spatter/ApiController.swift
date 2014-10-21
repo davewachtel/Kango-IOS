@@ -19,6 +19,7 @@ class APIController {
     
     var totalCount: Int = 0;
     var hasPulled = false;
+    var isInProgress = false;
     
     var delegate: APIControllerProtocol;
     
@@ -27,7 +28,11 @@ class APIController {
     }
     
     func get(path: String) {
+        if(self.isInProgress){
+            return;
+        }
         
+        self.isInProgress = true;
         if(self.hasPulled)
         {
             if(self.pageNum * self.size < self.totalCount)
@@ -44,13 +49,18 @@ class APIController {
         let url = NSURL(string: path)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
-            println("Task completed")
+            
             if(error != nil) {
                 // If there is an error in the web request, print it to the console
                 println(error.localizedDescription)
             }
             
+            self.isInProgress = false;
+            
             var err: NSError?
+            if(data.length > 0)
+            {
+            
             var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
             if(err != nil) {
                 // If there is an error parsing JSON, print it to the console
@@ -58,8 +68,11 @@ class APIController {
             }
             self.totalCount = jsonResult["totalcount"] as Int;
             let results: NSArray = jsonResult["data"] as NSArray;
+                
+                self.delegate.didReceiveAPIResults(results) // THIS IS THE NEW LINE!!
+            }
             
-            self.delegate.didReceiveAPIResults(results) // THIS IS THE NEW LINE!!
+            
         })
         
         task.resume()

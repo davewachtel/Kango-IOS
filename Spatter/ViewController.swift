@@ -15,6 +15,8 @@ protocol DraggableViewProtocol {
 
 class ViewController: UIViewController, APIControllerProtocol, DraggableViewProtocol {
     
+    var serial_queue: dispatch_queue_t;
+
     lazy var api : APIController = APIController(delegate: self)
     
     var draggableView: CLDraggableView;
@@ -22,12 +24,14 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
     
     var swipeImages: Array<UIImage> = [];
     
-    var notFound:UIImage = UIImage(contentsOfFile: "404");
+    var notFound:UIImage;
     
     required init(coder aDecoder: NSCoder) {
         
         self.draggableView = CLDraggableView(coder: aDecoder);
         self.activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge);
+        self.serial_queue =  dispatch_queue_create("serial queue", nil);
+        self.notFound = UIImage(named: "404.jpg");
         
         super.init(coder: aDecoder);
         
@@ -43,7 +47,7 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
     override func loadView() {
         super.loadView();
         
-        self.draggableView.setFrames();
+        //self.draggableView.setFrames();
         self.view = self.draggableView;
     
         
@@ -62,11 +66,6 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func downloadMedia(media: Media)
     {
         let url = NSURL.URLWithString(media.url);
@@ -78,7 +77,6 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
             {
                 return;
             }
-            
             
             var img:UIImage = UIImage();
             
@@ -96,23 +94,57 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
                 break;
             }
             
-            var isEmpty = (self.swipeImages.count == 0);
-            self.swipeImages.append(img);
-            
-            if(isEmpty){
-                self.draggableView.setImage(img);
-                self.activityView.stopAnimating();
-            }
+            self.addImage(img);
         });
         
     }
     
+    func addImage(img: UIImage)
+    {
+        //dispatch_sync(serial_queue)
+        //{
+            var arrCount = self.swipeImages.count;
+            var isEmpty = (arrCount == 0);
+            self.swipeImages.append(img);
+            
+            if(isEmpty){
+                self.setNextImageView();
+            }
+        
+        //}
+    }
+    
+    func setNextImageView()
+    {
+        //dispatch_sync(serial_queue)
+          //  {
+        var arrCount = self.swipeImages.count;
+        if(arrCount == 0)
+        {
+            self.draggableView.setImage(self.notFound);
+        }
+        else
+        {
+            self.draggableView.setImage(self.swipeImages[0]);
+            if(self.activityView.isAnimating())
+            {
+                self.activityView.stopAnimating();
+            }
+        }
+       // }
+    }
+    
     func removeCurrentView()
     {
-        self.draggableView.setImage(self.swipeImages[1]);
-        self.swipeImages.removeAtIndex(0);
+        dispatch_sync(serial_queue)
+        {
+            if(self.swipeImages.count > 0){
+                self.swipeImages.removeAtIndex(0);
+            }
+        }
         
-        if(self.swipeImages.count <= (self.api.size / 2))
+        self.setNextImageView();
+        if(self.swipeImages.count <= 3)
         {
             api.getNextContent();
         }
