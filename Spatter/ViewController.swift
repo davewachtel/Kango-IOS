@@ -13,7 +13,7 @@ protocol DraggableViewProtocol {
     func removeCurrentView()
 }
 
-class ViewController: UIViewController, APIControllerProtocol, DraggableViewProtocol {
+class ViewController: GAITrackedViewController, APIControllerProtocol, DraggableViewProtocol {
     
     var serial_queue: dispatch_queue_t;
 
@@ -31,7 +31,7 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
         self.draggableView = CLDraggableView(coder: aDecoder);
         self.activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge);
         self.serial_queue =  dispatch_queue_create("serial queue", nil);
-        self.notFound = UIImage(named: "404.jpg");
+        self.notFound = UIImage(named: "404.jpg")!;
         
         super.init(coder: aDecoder);
         
@@ -57,6 +57,13 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
         self.view.addSubview(activityView);
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        //Track Screen
+        self.screenName = "Playground Screen";
+    }
+    
     //Complete
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -68,8 +75,8 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
     
     func downloadMedia(media: Media)
     {
-        let url = NSURL.URLWithString(media.url);
-        var request: NSURLRequest = NSURLRequest(URL:url)
+        let url = NSURL(string: media.url);
+        var request: NSURLRequest = NSURLRequest(URL:url!)
         
         NSURLConnection.sendAsynchronousRequest(request, queue:NSOperationQueue.mainQueue(), completionHandler: {(response : NSURLResponse!, data : NSData!, error : NSError!) in
             
@@ -78,14 +85,14 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
                 return;
             }
             
-            var img:UIImage = UIImage();
+            var img:UIImage?;
             
             switch(media.mediaTypeId)
                 {
-            case MediaType.Image.toRaw():
+            case MediaType.Image.rawValue:
                 img = UIImage(data:data);
                 break;
-            case MediaType.Animation.toRaw():
+            case MediaType.Animation.rawValue:
                 img = UIImage.animatedImageWithAnimatedGIFData(data);
                 
                 break;
@@ -94,7 +101,9 @@ class ViewController: UIViewController, APIControllerProtocol, DraggableViewProt
                 break;
             }
             
-            self.addImage(img);
+            if(img != nil){
+                self.addImage(img!);
+            }
         });
         
     }

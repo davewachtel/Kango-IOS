@@ -48,7 +48,7 @@ class APIController {
         
         let url = NSURL(string: path)
         let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
+        let task = session.dataTaskWithURL(url!, completionHandler: {data, response, error -> Void in
             
             if(error != nil) {
                 // If there is an error in the web request, print it to the console
