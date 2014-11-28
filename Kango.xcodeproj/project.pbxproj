@@ -8,28 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		852C9E2B19D125370036D3FC /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852C9E2A19D125370036D3FC /* ImageIO.framework */; };
-		852C9E3019D128630036D3FC /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 852C9E2F19D128630036D3FC /* UIImage+animatedGIF.m */; };
-		852DEB7C1A21B3A300BDB76E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7B1A21B3A300BDB76E /* LoginController.swift */; };
-		852DEB7E1A21BABB00BDB76E /* CLRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7D1A21BABB00BDB76E /* CLRequestController.swift */; };
+		852DEB7C1A21B3A300BDB76E /* LoginApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7B1A21B3A300BDB76E /* LoginApiController.swift */; };
+		852DEB7E1A21BABB00BDB76E /* HelperApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7D1A21BABB00BDB76E /* HelperApiController.swift */; };
 		852DEB801A21CD9000BDB76E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7F1A21CD9000BDB76E /* Token.swift */; };
-		852DEB8F1A21D69B00BDB76E /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 852DEB8E1A21D69B00BDB76E /* libGoogleAnalyticsServices.a */; };
-		853EBA1E1A18770400B28C99 /* CLLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853EBA1D1A18770400B28C99 /* CLLoginController.swift */; };
-		855816AB19D2893600429015 /* checkmark_300x300@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 855816AA19D2893600429015 /* checkmark_300x300@2x.png */; };
-		855816AD19D2898000429015 /* cross_300x300@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 855816AC19D2898000429015 /* cross_300x300@2x.png */; };
+		853EBA1E1A18770400B28C99 /* CLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853EBA1D1A18770400B28C99 /* CLLoginViewController.swift */; };
+		854B080F1A252787003FA04B /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 854B080E1A252787003FA04B /* libGoogleAnalyticsServices.a */; };
+		854B08131A25279E003FA04B /* 404@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 854B08101A25279E003FA04B /* 404@2x.jpg */; };
+		854B08141A25279E003FA04B /* checkmark_300x300@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 854B08111A25279E003FA04B /* checkmark_300x300@2x.png */; };
+		854B08151A25279E003FA04B /* cross_300x300@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 854B08121A25279E003FA04B /* cross_300x300@2x.png */; };
+		854B08191A2527BF003FA04B /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 854B08181A2527BF003FA04B /* UIImage+animatedGIF.m */; };
+		854B081B1A25B20B003FA04B /* CLPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B081A1A25B20B003FA04B /* CLPlaygroundView.swift */; };
 		8564D3861A17CE1C00D8135E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8564D3851A17CE1C00D8135E /* CoreData.framework */; };
 		8564D3881A17CE2600D8135E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8564D3871A17CE2600D8135E /* SystemConfiguration.framework */; };
 		8564D38A1A17CE4300D8135E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8564D3891A17CE4300D8135E /* libz.dylib */; };
 		8564D38E1A18491A00D8135E /* CLLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564D38D1A18491A00D8135E /* CLLoginView.swift */; };
 		8598A8BC19A5A3D500D09531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8BB19A5A3D500D09531 /* AppDelegate.swift */; };
-		8598A8BE19A5A3D500D09531 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8BD19A5A3D500D09531 /* ViewController.swift */; };
+		8598A8BE19A5A3D500D09531 /* CLMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8BD19A5A3D500D09531 /* CLMediaViewController.swift */; };
 		8598A8C119A5A3D500D09531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8598A8BF19A5A3D500D09531 /* Main.storyboard */; };
 		8598A8C319A5A3D500D09531 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8598A8C219A5A3D500D09531 /* Images.xcassets */; };
-		8598A8CF19A5A3D500D09531 /* SpatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8CE19A5A3D500D09531 /* SpatterTests.swift */; };
 		8598A8DE19A5A7EA00D09531 /* CLDraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8DD19A5A7EA00D09531 /* CLDraggableView.swift */; };
 		8598A8E019A5A93800D09531 /* CLOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8DF19A5A93800D09531 /* CLOverlayView.swift */; };
 		859B71CD19E507E0008D481C /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B71CC19E507E0008D481C /* Media.swift */; };
-		85A326EB19E4EB32000E1FB5 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A326EA19E4EB32000E1FB5 /* ApiController.swift */; };
-		85F3CA4119F4A5AD00689BFD /* 404@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85F3CA4019F4A5AD00689BFD /* 404@2x.jpg */; };
+		85A326EB19E4EB32000E1FB5 /* MediaApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A326EA19E4EB32000E1FB5 /* MediaApiController.swift */; };
+		85C771981A230639008202DA /* TokenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E01351A22565E00CFAD02 /* TokenTest.swift */; };
+		85C771991A2306AB008202DA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7F1A21CD9000BDB76E /* Token.swift */; };
+		85C7719A1A230733008202DA /* TokenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E01351A22565E00CFAD02 /* TokenTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,25 +48,28 @@
 /* Begin PBXFileReference section */
 		852C9E2A19D125370036D3FC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		852C9E2D19D128620036D3FC /* Spatter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spatter-Bridging-Header.h"; sourceTree = "<group>"; };
-		852C9E2E19D128630036D3FC /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+animatedGIF.h"; path = "Spatter/3rd Party/Gif/UIImage+animatedGIF.h"; sourceTree = "<group>"; };
-		852C9E2F19D128630036D3FC /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+animatedGIF.m"; path = "Spatter/3rd Party/Gif/UIImage+animatedGIF.m"; sourceTree = "<group>"; };
-		852DEB7B1A21B3A300BDB76E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		852DEB7D1A21BABB00BDB76E /* CLRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLRequestController.swift; sourceTree = "<group>"; };
+		852DEB7B1A21B3A300BDB76E /* LoginApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginApiController.swift; sourceTree = "<group>"; };
+		852DEB7D1A21BABB00BDB76E /* HelperApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperApiController.swift; sourceTree = "<group>"; };
 		852DEB7F1A21CD9000BDB76E /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		852DEB841A21D69B00BDB76E /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = "Spatter/3rd Party/GoogleAnalytics/GAI.h"; sourceTree = "<group>"; };
-		852DEB851A21D69B00BDB76E /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = "Spatter/3rd Party/GoogleAnalytics/GAIDictionaryBuilder.h"; sourceTree = "<group>"; };
-		852DEB861A21D69B00BDB76E /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = "Spatter/3rd Party/GoogleAnalytics/GAIEcommerceFields.h"; sourceTree = "<group>"; };
-		852DEB871A21D69B00BDB76E /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = "Spatter/3rd Party/GoogleAnalytics/GAIEcommerceProduct.h"; sourceTree = "<group>"; };
-		852DEB881A21D69B00BDB76E /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = "Spatter/3rd Party/GoogleAnalytics/GAIEcommerceProductAction.h"; sourceTree = "<group>"; };
-		852DEB891A21D69B00BDB76E /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = "Spatter/3rd Party/GoogleAnalytics/GAIEcommercePromotion.h"; sourceTree = "<group>"; };
-		852DEB8A1A21D69B00BDB76E /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = "Spatter/3rd Party/GoogleAnalytics/GAIFields.h"; sourceTree = "<group>"; };
-		852DEB8B1A21D69B00BDB76E /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = "Spatter/3rd Party/GoogleAnalytics/GAILogger.h"; sourceTree = "<group>"; };
-		852DEB8C1A21D69B00BDB76E /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = "Spatter/3rd Party/GoogleAnalytics/GAITrackedViewController.h"; sourceTree = "<group>"; };
-		852DEB8D1A21D69B00BDB76E /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "Spatter/3rd Party/GoogleAnalytics/GAITracker.h"; sourceTree = "<group>"; };
-		852DEB8E1A21D69B00BDB76E /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = "Spatter/3rd Party/GoogleAnalytics/libGoogleAnalyticsServices.a"; sourceTree = "<group>"; };
-		853EBA1D1A18770400B28C99 /* CLLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoginController.swift; sourceTree = "<group>"; };
-		855816AA19D2893600429015 /* checkmark_300x300@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkmark_300x300@2x.png"; path = "Spatter/3rd Party/checkmark_300x300@2x.png"; sourceTree = "<group>"; };
-		855816AC19D2898000429015 /* cross_300x300@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cross_300x300@2x.png"; path = "Spatter/3rd Party/cross_300x300@2x.png"; sourceTree = "<group>"; };
+		852E01351A22565E00CFAD02 /* TokenTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenTest.swift; sourceTree = "<group>"; };
+		853EBA1D1A18770400B28C99 /* CLLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoginViewController.swift; sourceTree = "<group>"; };
+		854B08041A252787003FA04B /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Spatter/3rdParty/GoogleAnalytics/GAI.h; sourceTree = "<group>"; };
+		854B08051A252787003FA04B /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Spatter/3rdParty/GoogleAnalytics/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		854B08061A252787003FA04B /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = Spatter/3rdParty/GoogleAnalytics/GAIEcommerceFields.h; sourceTree = "<group>"; };
+		854B08071A252787003FA04B /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Spatter/3rdParty/GoogleAnalytics/GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		854B08081A252787003FA04B /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Spatter/3rdParty/GoogleAnalytics/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		854B08091A252787003FA04B /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Spatter/3rdParty/GoogleAnalytics/GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		854B080A1A252787003FA04B /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Spatter/3rdParty/GoogleAnalytics/GAIFields.h; sourceTree = "<group>"; };
+		854B080B1A252787003FA04B /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Spatter/3rdParty/GoogleAnalytics/GAILogger.h; sourceTree = "<group>"; };
+		854B080C1A252787003FA04B /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Spatter/3rdParty/GoogleAnalytics/GAITrackedViewController.h; sourceTree = "<group>"; };
+		854B080D1A252787003FA04B /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Spatter/3rdParty/GoogleAnalytics/GAITracker.h; sourceTree = "<group>"; };
+		854B080E1A252787003FA04B /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = Spatter/3rdParty/GoogleAnalytics/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		854B08101A25279E003FA04B /* 404@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "404@2x.jpg"; path = "Spatter/3rdParty/404@2x.jpg"; sourceTree = "<group>"; };
+		854B08111A25279E003FA04B /* checkmark_300x300@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkmark_300x300@2x.png"; path = "Spatter/3rdParty/checkmark_300x300@2x.png"; sourceTree = "<group>"; };
+		854B08121A25279E003FA04B /* cross_300x300@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cross_300x300@2x.png"; path = "Spatter/3rdParty/cross_300x300@2x.png"; sourceTree = "<group>"; };
+		854B08171A2527BF003FA04B /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+animatedGIF.h"; path = "Spatter/3rdParty/Gif/UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		854B08181A2527BF003FA04B /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+animatedGIF.m"; path = "Spatter/3rdParty/Gif/UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		854B081A1A25B20B003FA04B /* CLPlaygroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLPlaygroundView.swift; sourceTree = "<group>"; };
 		8564D3851A17CE1C00D8135E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8564D3871A17CE2600D8135E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8564D3891A17CE4300D8135E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -71,17 +77,15 @@
 		8598A8B619A5A3D500D09531 /* Kango.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kango.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8598A8BA19A5A3D500D09531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8598A8BB19A5A3D500D09531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8598A8BD19A5A3D500D09531 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8598A8BD19A5A3D500D09531 /* CLMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLMediaViewController.swift; sourceTree = "<group>"; };
 		8598A8C019A5A3D500D09531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8598A8C219A5A3D500D09531 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8598A8C819A5A3D500D09531 /* KangoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KangoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8598A8CD19A5A3D500D09531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8598A8CE19A5A3D500D09531 /* SpatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpatterTests.swift; sourceTree = "<group>"; };
 		8598A8DD19A5A7EA00D09531 /* CLDraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLDraggableView.swift; sourceTree = "<group>"; };
 		8598A8DF19A5A93800D09531 /* CLOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLOverlayView.swift; sourceTree = "<group>"; };
 		859B71CC19E507E0008D481C /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
-		85A326EA19E4EB32000E1FB5 /* ApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
-		85F3CA4019F4A5AD00689BFD /* 404@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "404@2x.jpg"; path = "Spatter/3rd Party/404@2x.jpg"; sourceTree = "<group>"; };
+		85A326EA19E4EB32000E1FB5 /* MediaApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaApiController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +96,8 @@
 				8564D38A1A17CE4300D8135E /* libz.dylib in Frameworks */,
 				8564D3881A17CE2600D8135E /* SystemConfiguration.framework in Frameworks */,
 				8564D3861A17CE1C00D8135E /* CoreData.framework in Frameworks */,
-				852DEB8F1A21D69B00BDB76E /* libGoogleAnalyticsServices.a in Frameworks */,
 				852C9E2B19D125370036D3FC /* ImageIO.framework in Frameworks */,
+				854B080F1A252787003FA04B /* libGoogleAnalyticsServices.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,28 +111,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		852C9E2819D124E30036D3FC /* 3rd Party */ = {
-			isa = PBXGroup;
-			children = (
-				852DEB831A21D67600BDB76E /* GoogleAnalytics */,
-				852C9E2D19D128620036D3FC /* Spatter-Bridging-Header.h */,
-				85F3CA4019F4A5AD00689BFD /* 404@2x.jpg */,
-				855816AC19D2898000429015 /* cross_300x300@2x.png */,
-				855816AA19D2893600429015 /* checkmark_300x300@2x.png */,
-				852C9E2919D124EB0036D3FC /* GIF */,
-			);
-			name = "3rd Party";
-			sourceTree = "<group>";
-		};
-		852C9E2919D124EB0036D3FC /* GIF */ = {
-			isa = PBXGroup;
-			children = (
-				852C9E2E19D128630036D3FC /* UIImage+animatedGIF.h */,
-				852C9E2F19D128630036D3FC /* UIImage+animatedGIF.m */,
-			);
-			name = GIF;
-			sourceTree = "<group>";
-		};
 		852C9E2C19D1272D0036D3FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,36 +125,58 @@
 		852DEB811A21D47B00BDB76E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				852DEB7D1A21BABB00BDB76E /* CLRequestController.swift */,
-				852DEB7B1A21B3A300BDB76E /* LoginController.swift */,
-				85A326EA19E4EB32000E1FB5 /* ApiController.swift */,
+				852DEB7D1A21BABB00BDB76E /* HelperApiController.swift */,
+				852DEB7B1A21B3A300BDB76E /* LoginApiController.swift */,
+				85A326EA19E4EB32000E1FB5 /* MediaApiController.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
 		};
-		852DEB831A21D67600BDB76E /* GoogleAnalytics */ = {
+		854B08021A252764003FA04B /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
-				852DEB841A21D69B00BDB76E /* GAI.h */,
-				852DEB851A21D69B00BDB76E /* GAIDictionaryBuilder.h */,
-				852DEB861A21D69B00BDB76E /* GAIEcommerceFields.h */,
-				852DEB871A21D69B00BDB76E /* GAIEcommerceProduct.h */,
-				852DEB881A21D69B00BDB76E /* GAIEcommerceProductAction.h */,
-				852DEB891A21D69B00BDB76E /* GAIEcommercePromotion.h */,
-				852DEB8A1A21D69B00BDB76E /* GAIFields.h */,
-				852DEB8B1A21D69B00BDB76E /* GAILogger.h */,
-				852DEB8C1A21D69B00BDB76E /* GAITrackedViewController.h */,
-				852DEB8D1A21D69B00BDB76E /* GAITracker.h */,
-				852DEB8E1A21D69B00BDB76E /* libGoogleAnalyticsServices.a */,
+				854B08161A2527B4003FA04B /* GIF */,
+				854B08031A252774003FA04B /* GoogleAnalytics */,
+				852C9E2D19D128620036D3FC /* Spatter-Bridging-Header.h */,
+				854B08101A25279E003FA04B /* 404@2x.jpg */,
+				854B08111A25279E003FA04B /* checkmark_300x300@2x.png */,
+				854B08121A25279E003FA04B /* cross_300x300@2x.png */,
+			);
+			name = 3rdParty;
+			sourceTree = "<group>";
+		};
+		854B08031A252774003FA04B /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				854B08041A252787003FA04B /* GAI.h */,
+				854B08051A252787003FA04B /* GAIDictionaryBuilder.h */,
+				854B08061A252787003FA04B /* GAIEcommerceFields.h */,
+				854B08071A252787003FA04B /* GAIEcommerceProduct.h */,
+				854B08081A252787003FA04B /* GAIEcommerceProductAction.h */,
+				854B08091A252787003FA04B /* GAIEcommercePromotion.h */,
+				854B080A1A252787003FA04B /* GAIFields.h */,
+				854B080B1A252787003FA04B /* GAILogger.h */,
+				854B080C1A252787003FA04B /* GAITrackedViewController.h */,
+				854B080D1A252787003FA04B /* GAITracker.h */,
+				854B080E1A252787003FA04B /* libGoogleAnalyticsServices.a */,
 			);
 			name = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		854B08161A2527B4003FA04B /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				854B08171A2527BF003FA04B /* UIImage+animatedGIF.h */,
+				854B08181A2527BF003FA04B /* UIImage+animatedGIF.m */,
+			);
+			name = GIF;
 			sourceTree = "<group>";
 		};
 		8598A8AD19A5A3D500D09531 = {
 			isa = PBXGroup;
 			children = (
 				852C9E2C19D1272D0036D3FC /* Frameworks */,
-				852C9E2819D124E30036D3FC /* 3rd Party */,
+				854B08021A252764003FA04B /* 3rdParty */,
 				8598A8B819A5A3D500D09531 /* Main */,
 				8598A8CB19A5A3D500D09531 /* SpatterTests */,
 				8598A8B719A5A3D500D09531 /* Products */,
@@ -214,7 +218,7 @@
 		8598A8CB19A5A3D500D09531 /* SpatterTests */ = {
 			isa = PBXGroup;
 			children = (
-				8598A8CE19A5A3D500D09531 /* SpatterTests.swift */,
+				852E01351A22565E00CFAD02 /* TokenTest.swift */,
 				8598A8CC19A5A3D500D09531 /* Supporting Files */,
 			);
 			path = SpatterTests;
@@ -234,6 +238,7 @@
 				8598A8DD19A5A7EA00D09531 /* CLDraggableView.swift */,
 				8598A8DF19A5A93800D09531 /* CLOverlayView.swift */,
 				8564D38D1A18491A00D8135E /* CLLoginView.swift */,
+				854B081A1A25B20B003FA04B /* CLPlaygroundView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -242,8 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				852DEB811A21D47B00BDB76E /* Helper */,
-				8598A8BD19A5A3D500D09531 /* ViewController.swift */,
-				853EBA1D1A18770400B28C99 /* CLLoginController.swift */,
+				8598A8BD19A5A3D500D09531 /* CLMediaViewController.swift */,
+				853EBA1D1A18770400B28C99 /* CLLoginViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -338,11 +343,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				854B08151A25279E003FA04B /* cross_300x300@2x.png in Resources */,
 				8598A8C119A5A3D500D09531 /* Main.storyboard in Resources */,
-				85F3CA4119F4A5AD00689BFD /* 404@2x.jpg in Resources */,
-				855816AB19D2893600429015 /* checkmark_300x300@2x.png in Resources */,
-				855816AD19D2898000429015 /* cross_300x300@2x.png in Resources */,
+				854B08141A25279E003FA04B /* checkmark_300x300@2x.png in Resources */,
 				8598A8C319A5A3D500D09531 /* Images.xcassets in Resources */,
+				854B08131A25279E003FA04B /* 404@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,17 +366,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				8598A8E019A5A93800D09531 /* CLOverlayView.swift in Sources */,
-				852C9E3019D128630036D3FC /* UIImage+animatedGIF.m in Sources */,
-				85A326EB19E4EB32000E1FB5 /* ApiController.swift in Sources */,
+				85A326EB19E4EB32000E1FB5 /* MediaApiController.swift in Sources */,
 				852DEB801A21CD9000BDB76E /* Token.swift in Sources */,
-				853EBA1E1A18770400B28C99 /* CLLoginController.swift in Sources */,
-				8598A8BE19A5A3D500D09531 /* ViewController.swift in Sources */,
+				853EBA1E1A18770400B28C99 /* CLLoginViewController.swift in Sources */,
+				8598A8BE19A5A3D500D09531 /* CLMediaViewController.swift in Sources */,
 				8598A8BC19A5A3D500D09531 /* AppDelegate.swift in Sources */,
 				8564D38E1A18491A00D8135E /* CLLoginView.swift in Sources */,
+				85C7719A1A230733008202DA /* TokenTest.swift in Sources */,
 				859B71CD19E507E0008D481C /* Media.swift in Sources */,
-				852DEB7E1A21BABB00BDB76E /* CLRequestController.swift in Sources */,
+				852DEB7E1A21BABB00BDB76E /* HelperApiController.swift in Sources */,
+				854B081B1A25B20B003FA04B /* CLPlaygroundView.swift in Sources */,
 				8598A8DE19A5A7EA00D09531 /* CLDraggableView.swift in Sources */,
-				852DEB7C1A21B3A300BDB76E /* LoginController.swift in Sources */,
+				852DEB7C1A21B3A300BDB76E /* LoginApiController.swift in Sources */,
+				854B08191A2527BF003FA04B /* UIImage+animatedGIF.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +386,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8598A8CF19A5A3D500D09531 /* SpatterTests.swift in Sources */,
+				85C771991A2306AB008202DA /* Token.swift in Sources */,
+				85C771981A230639008202DA /* TokenTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +510,11 @@
 					Party/GoogleAnalytics,
 					"$(PROJECT_DIR)/Spatter/3rd",
 					Party/GoogleAnalytics,
+					"$(PROJECT_DIR)/Spatter/3rd",
+					Party/GoogleAnalytics,
+					"$(PROJECT_DIR)/Spatter/3rd",
+					Party/GoogleAnalytics,
+					"$(PROJECT_DIR)/Spatter/3rdParty/GoogleAnalytics",
 				);
 				PRODUCT_NAME = Kango;
 				PROVISIONING_PROFILE = "d0ab6e60-97af-43ff-95c5-2695b74e34fb";
@@ -530,6 +543,11 @@
 					Party/GoogleAnalytics,
 					"$(PROJECT_DIR)/Spatter/3rd",
 					Party/GoogleAnalytics,
+					"$(PROJECT_DIR)/Spatter/3rd",
+					Party/GoogleAnalytics,
+					"$(PROJECT_DIR)/Spatter/3rd",
+					Party/GoogleAnalytics,
+					"$(PROJECT_DIR)/Spatter/3rdParty/GoogleAnalytics",
 				);
 				PRODUCT_NAME = Kango;
 				PROVISIONING_PROFILE = "29058055-3b68-4999-a3fe-93115693f30b";

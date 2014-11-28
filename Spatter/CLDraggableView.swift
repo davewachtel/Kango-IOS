@@ -16,8 +16,7 @@ class CLDraggableView: UIView
     var overlayView: CLOverlayView;
     var imageView: UIImageView;
     
-    
-    var delegate:DraggableViewProtocol?;
+    var delegate:CLMediaViewProtocol?;
     
     
     required init(coder aDecoder: NSCoder) {
@@ -35,7 +34,6 @@ class CLDraggableView: UIView
         super.layoutSubviews();
         
         self.overlayView.frame = self.bounds;
-        //self.imageView.bounds = self.bounds;
         self.imageView.frame = self.bounds;
     }
     
@@ -60,8 +58,6 @@ class CLDraggableView: UIView
     func setImage(img: UIImage)
     {
         self.imageView.image = img;
-        //self.imageView.frame = CGRect(origin: self.bounds.origin, size: img.size);
-        //self.imageView.frame = self.bounds;
     }
 
     func dragged(rec: UIGestureRecognizer)

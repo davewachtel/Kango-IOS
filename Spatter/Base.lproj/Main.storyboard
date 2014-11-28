@@ -1,68 +1,127 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="M4i-bk-9ZT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Login Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Login-->
+        <scene sceneID="XLo-9W-uPE">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="CLLoginController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" id="q1I-eS-Z8H" customClass="CLLoginViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="xj5-cq-SD7"/>
+                        <viewControllerLayoutGuide type="bottom" id="M2u-RI-vNe"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="CLLoginView" customModule="Kango" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="Sx4-6W-1UM" customClass="CLLoginView" customModule="Kango" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9iE-SI-Hqx" customClass="CLLoginView" customModule="Kango" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Kango!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIH-ZM-v3J">
-                                        <rect key="frame" x="225" y="117" width="150" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8y-6w-bj8">
-                                        <rect key="frame" x="235" y="420" width="131" height="30"/>
-                                        <state key="normal" title="Login">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="9iE-SI-Hqx" eventType="touchUpInside" id="yvx-X4-8o3"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WOP-CV-6Ar">
-                                        <rect key="frame" x="212" y="206" width="176" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPt-9c-dYN">
-                                        <rect key="frame" x="212" y="306" width="176" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="XEr-7h-JBj">
-                                        <rect key="frame" x="290" y="290" width="20" height="20"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.23741704820000001" green="0.75" blue="0.6441795696" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Kango" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqS-ed-8e9">
+                                <rect key="frame" x="211" y="144" width="179" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="179" id="tAL-gP-CuC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="JMajidian@gmail.com" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXd-6g-NXU">
+                                <rect key="frame" x="192" y="188" width="216" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="iP8-Za-4Fm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ski123" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMT-Ol-1rc">
+                                <rect key="frame" x="192" y="233" width="216" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KM8-FX-oyL">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="hSs-7U-r9H"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="spinner" destination="XEr-7h-JBj" id="6HU-Te-8m4"/>
-                                    <outlet property="txtPassword" destination="qPt-9c-dYN" id="xf0-kO-men"/>
-                                    <outlet property="txtUsername" destination="WOP-CV-6Ar" id="EHb-1e-jgu"/>
+                                    <action selector="buttonTapped:" destination="Sx4-6W-1UM" eventType="touchUpInside" id="r8y-PS-LU4"/>
                                 </connections>
-                            </view>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-4j-YLx">
+                                <rect key="frame" x="290" y="92" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KM8-FX-oyL" firstAttribute="centerX" secondItem="UMT-Ol-1rc" secondAttribute="centerX" id="Dbg-le-aUP"/>
+                            <constraint firstItem="WqS-ed-8e9" firstAttribute="top" secondItem="aZI-4j-YLx" secondAttribute="bottom" constant="32" id="Nmu-j3-nrm"/>
+                            <constraint firstItem="UMT-Ol-1rc" firstAttribute="trailing" secondItem="EXd-6g-NXU" secondAttribute="trailing" id="OJZ-VU-9Hy"/>
+                            <constraint firstItem="KM8-FX-oyL" firstAttribute="centerY" secondItem="Sx4-6W-1UM" secondAttribute="centerY" id="bb4-Ye-Fy4"/>
+                            <constraint firstItem="UMT-Ol-1rc" firstAttribute="top" secondItem="EXd-6g-NXU" secondAttribute="bottom" constant="15" id="cJX-kq-Daj"/>
+                            <constraint firstItem="KM8-FX-oyL" firstAttribute="top" secondItem="UMT-Ol-1rc" secondAttribute="bottom" constant="22" id="fPh-Se-P6K"/>
+                            <constraint firstItem="UMT-Ol-1rc" firstAttribute="leading" secondItem="EXd-6g-NXU" secondAttribute="leading" id="jKV-zE-bCo"/>
+                            <constraint firstItem="aZI-4j-YLx" firstAttribute="centerX" secondItem="WqS-ed-8e9" secondAttribute="centerX" id="mfn-xV-WG9"/>
+                            <constraint firstItem="EXd-6g-NXU" firstAttribute="top" secondItem="WqS-ed-8e9" secondAttribute="bottom" constant="23" id="u9E-rK-Y3v"/>
+                            <constraint firstItem="WqS-ed-8e9" firstAttribute="centerX" secondItem="EXd-6g-NXU" secondAttribute="centerX" id="uRw-Am-QaT"/>
+                            <constraint firstItem="aZI-4j-YLx" firstAttribute="centerX" secondItem="Sx4-6W-1UM" secondAttribute="centerX" id="xkL-F0-fOG"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="spinner" destination="aZI-4j-YLx" id="zxA-Av-rn7"/>
+                            <outlet property="txtPassword" destination="UMT-Ol-1rc" id="HWh-Xw-0kx"/>
+                            <outlet property="txtUsername" destination="EXd-6g-NXU" id="lHB-KY-nxK"/>
+                        </connections>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="tqL-Cc-XCh"/>
+                    <keyCommands/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="AFZ-Mt-EgH" kind="show" identifier="LoginSuccessSegue" id="MMU-io-5z3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2xX-Fe-e9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1285" y="783"/>
+        </scene>
+        <!--Media View Controller-->
+        <scene sceneID="Fug-Jx-oBo">
+            <objects>
+                <viewController id="AFZ-Mt-EgH" customClass="CLMediaViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ALh-MO-Fq7"/>
+                        <viewControllerLayoutGuide type="bottom" id="RQd-ee-iKn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="35O-Qf-5QB" customClass="CLDraggableView" customModule="Kango" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUO-Ue-O6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="347" y="241"/>
+            <point key="canvasLocation" x="2109" y="737"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gdc-5l-Ha3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="M4i-bk-9ZT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7rs-6P-DSo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="q1I-eS-Z8H" kind="relationship" relationship="rootViewController" id="Yez-WH-d6n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="quR-Ln-kpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="473" y="783"/>
         </scene>
     </scenes>
 </document>

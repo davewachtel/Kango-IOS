@@ -9,15 +9,17 @@
 import UIKit
 
 
-protocol DraggableViewProtocol {
+protocol CLMediaViewProtocol {
     func removeCurrentView()
 }
 
-class ViewController: GAITrackedViewController, APIControllerProtocol, DraggableViewProtocol {
+class CLMediaViewController: GAITrackedViewController, MediaApiControllerProtocol, CLMediaViewProtocol {
     
     var serial_queue: dispatch_queue_t;
 
-    lazy var api : APIController = APIController(delegate: self)
+    lazy var api : MediaApiController = MediaApiController(delegate: self, token: self.authToken!);
+    
+    var authToken: Token?;
     
     var draggableView: CLDraggableView;
     var activityView: UIActivityIndicatorView;
@@ -48,8 +50,8 @@ class ViewController: GAITrackedViewController, APIControllerProtocol, Draggable
         super.loadView();
         
         //self.draggableView.setFrames();
+        //self.view.addSubview(self.draggableView);
         self.view = self.draggableView;
-    
         
         self.activityView.bounds = self.view.frame;
         self.activityView.center = self.view.center;

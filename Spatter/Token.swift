@@ -20,25 +20,30 @@ import Foundation
 */
 
 class Token {
-    var token: String
-    var type: String
-    var expires_in: Int
-    var userName: String;
-    var issuedDt: String;
-    var expiresDt: String;
+    
+    var dicData: NSDictionary;
     
     init(data: NSDictionary)  {
-        self.token = data.objectForKey("access_token") as String;
-        self.type = data.objectForKey("type") as String;
-        self.expires_in = data.objectForKey("expires_in") as Int;
-        self.userName = data.objectForKey("userName") as String;
-        self.issuedDt = data.objectForKey("issuedDt") as String;
-        self.expiresDt = data.objectForKey("expiresDt") as String;
+        self.dicData = data;
+    }
+    
+    func getToken() -> String
+    {
+            return self.dicData.objectForKey("access_token") as String;
+    }
+    func getUsername() -> String
+    {
+        return self.dicData.objectForKey("userName") as String;
+    }
+    func getType() -> String
+    {
+        return self.dicData.objectForKey("token_type") as String;
     }
     
     func isExpired() -> Bool
     {
-        var date: NSDate = parseDate(self.expiresDt);
+        var strExpires = self.dicData.objectForKey(".expires") as String;
+        var date: NSDate = parseDate(strExpires);
         var utc: NSDate = NSDate();
         if(date.compare(utc) == NSComparisonResult.OrderedDescending)
         {
@@ -58,4 +63,31 @@ class Token {
         return date!;
     }
     
+    class func loadValidToken() -> Token?
+    {
+        var defaults =  NSUserDefaults.standardUserDefaults();
+        var jsonStr = defaults.objectForKey("token") as NSDictionary;
+        
+        var token = Token(data: jsonStr);
+        if(token.isExpired())
+        {
+            Token.clearToken();
+            return nil;
+        }
+        
+        return token;
+    }
+    
+    class func clearToken() -> Void
+    {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("token");
+    }
+    
+    func saveToken() -> Bool
+    {
+        var defaults =  NSUserDefaults.standardUserDefaults();
+        defaults.setObject(self.dicData, forKey: "token");
+        
+        return defaults.synchronize();
+    }
 }

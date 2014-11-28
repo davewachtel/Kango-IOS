@@ -14,19 +14,16 @@ class CLLoginView : UIView
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var spinner: UIActivityIndicatorView!;
     
-    
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder);
-    }
+    var delegate: CLLoginViewDelegate!;
     
     @IBAction func buttonTapped(AnyObject) {
         
         spinner.startAnimating();
+        spinner.hidden = false;
         
-        
-        
+        self.delegate.authenticate(txtUsername.text, password: txtPassword.text, completion: { () in
+            self.spinner.stopAnimating();
+            self.spinner.hidden = true;
+        });
     }
-    
-    
 }

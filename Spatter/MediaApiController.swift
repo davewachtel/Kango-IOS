@@ -8,11 +8,12 @@
 
 import Foundation
 
-protocol APIControllerProtocol {
+protocol MediaApiControllerProtocol {
     func didReceiveAPIResults(data: NSArray)
 }
 
-class APIController {
+class MediaApiController {
+    
     
     var pageNum: Int = 1;
     var size:Int = 5;
@@ -21,10 +22,13 @@ class APIController {
     var hasPulled = false;
     var isInProgress = false;
     
-    var delegate: APIControllerProtocol;
+    var authToken: Token;
     
-    init(delegate: APIControllerProtocol) {
-        self.delegate = delegate
+    var delegate: MediaApiControllerProtocol;
+    
+    init(delegate: MediaApiControllerProtocol, token: Token) {
+        self.delegate = delegate;
+        self.authToken = token;
     }
     
     func get(path: String) {
@@ -46,9 +50,21 @@ class APIController {
         
         self.hasPulled = true;
         
-        let url = NSURL(string: path)
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithURL(url!, completionHandler: {data, response, error -> Void in
+        var helper = HelperApiController();
+        
+        let url = NSURL(string: path);
+        let session = NSURLSession.sharedSession();
+        var request = NSMutableURLRequest(URL: url!);
+        
+        request.HTTPMethod = "GET";
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type");
+        
+        let strAuth = NSString(format: "%@ %@", self.authToken.getType(), self.authToken.getToken());
+        request.addValue(strAuth,  forHTTPHeaderField: "Authorization");
+        
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             
             if(error != nil) {
                 // If there is an error in the web request, print it to the console
@@ -79,7 +95,7 @@ class APIController {
     }
     
     func getNextContent() {
-        let urlPath = "http://cornicelabsservices.cloudapp.net/api/media?page=\(self.pageNum)&size=\(self.size)";
+        let urlPath = HelperApiController.BaseUrl() + "api/media?page=\(self.pageNum)&size=\(self.size)";
         get(urlPath)
     }
     
