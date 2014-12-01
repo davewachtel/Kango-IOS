@@ -11,6 +11,8 @@
 		852DEB7C1A21B3A300BDB76E /* LoginApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7B1A21B3A300BDB76E /* LoginApiController.swift */; };
 		852DEB7E1A21BABB00BDB76E /* HelperApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7D1A21BABB00BDB76E /* HelperApiController.swift */; };
 		852DEB801A21CD9000BDB76E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7F1A21CD9000BDB76E /* Token.swift */; };
+		853CEA1D1A2C0146009EFAD1 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853CEA1C1A2C0146009EFAD1 /* SCLAlertView.swift */; };
+		853CEA1F1A2C071F009EFAD1 /* MediaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853CEA1E1A2C071F009EFAD1 /* MediaImage.swift */; };
 		853EBA1E1A18770400B28C99 /* CLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853EBA1D1A18770400B28C99 /* CLLoginViewController.swift */; };
 		854B080F1A252787003FA04B /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 854B080E1A252787003FA04B /* libGoogleAnalyticsServices.a */; };
 		854B08131A25279E003FA04B /* 404@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 854B08101A25279E003FA04B /* 404@2x.jpg */; };
@@ -23,7 +25,7 @@
 		8564D38A1A17CE4300D8135E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8564D3891A17CE4300D8135E /* libz.dylib */; };
 		8564D38E1A18491A00D8135E /* CLLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564D38D1A18491A00D8135E /* CLLoginView.swift */; };
 		8598A8BC19A5A3D500D09531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8BB19A5A3D500D09531 /* AppDelegate.swift */; };
-		8598A8BE19A5A3D500D09531 /* CLMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8BD19A5A3D500D09531 /* CLMediaViewController.swift */; };
+		8598A8BE19A5A3D500D09531 /* CLPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8BD19A5A3D500D09531 /* CLPlaygroundViewController.swift */; };
 		8598A8C119A5A3D500D09531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8598A8BF19A5A3D500D09531 /* Main.storyboard */; };
 		8598A8C319A5A3D500D09531 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8598A8C219A5A3D500D09531 /* Images.xcassets */; };
 		8598A8DE19A5A7EA00D09531 /* CLDraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8DD19A5A7EA00D09531 /* CLDraggableView.swift */; };
@@ -52,6 +54,8 @@
 		852DEB7D1A21BABB00BDB76E /* HelperApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperApiController.swift; sourceTree = "<group>"; };
 		852DEB7F1A21CD9000BDB76E /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		852E01351A22565E00CFAD02 /* TokenTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenTest.swift; sourceTree = "<group>"; };
+		853CEA1C1A2C0146009EFAD1 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		853CEA1E1A2C071F009EFAD1 /* MediaImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaImage.swift; sourceTree = "<group>"; };
 		853EBA1D1A18770400B28C99 /* CLLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoginViewController.swift; sourceTree = "<group>"; };
 		854B08041A252787003FA04B /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Spatter/3rdParty/GoogleAnalytics/GAI.h; sourceTree = "<group>"; };
 		854B08051A252787003FA04B /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Spatter/3rdParty/GoogleAnalytics/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
@@ -77,7 +81,7 @@
 		8598A8B619A5A3D500D09531 /* Kango.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kango.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8598A8BA19A5A3D500D09531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8598A8BB19A5A3D500D09531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8598A8BD19A5A3D500D09531 /* CLMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLMediaViewController.swift; sourceTree = "<group>"; };
+		8598A8BD19A5A3D500D09531 /* CLPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLPlaygroundViewController.swift; sourceTree = "<group>"; };
 		8598A8C019A5A3D500D09531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8598A8C219A5A3D500D09531 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8598A8C819A5A3D500D09531 /* KangoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KangoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +145,7 @@
 				854B08101A25279E003FA04B /* 404@2x.jpg */,
 				854B08111A25279E003FA04B /* checkmark_300x300@2x.png */,
 				854B08121A25279E003FA04B /* cross_300x300@2x.png */,
+				853CEA1C1A2C0146009EFAD1 /* SCLAlertView.swift */,
 			);
 			name = 3rdParty;
 			sourceTree = "<group>";
@@ -247,7 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				852DEB811A21D47B00BDB76E /* Helper */,
-				8598A8BD19A5A3D500D09531 /* CLMediaViewController.swift */,
+				8598A8BD19A5A3D500D09531 /* CLPlaygroundViewController.swift */,
 				853EBA1D1A18770400B28C99 /* CLLoginViewController.swift */,
 			);
 			name = Controller;
@@ -258,6 +263,7 @@
 			children = (
 				859B71CC19E507E0008D481C /* Media.swift */,
 				852DEB7F1A21CD9000BDB76E /* Token.swift */,
+				853CEA1E1A2C071F009EFAD1 /* MediaImage.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -369,15 +375,17 @@
 				85A326EB19E4EB32000E1FB5 /* MediaApiController.swift in Sources */,
 				852DEB801A21CD9000BDB76E /* Token.swift in Sources */,
 				853EBA1E1A18770400B28C99 /* CLLoginViewController.swift in Sources */,
-				8598A8BE19A5A3D500D09531 /* CLMediaViewController.swift in Sources */,
+				8598A8BE19A5A3D500D09531 /* CLPlaygroundViewController.swift in Sources */,
 				8598A8BC19A5A3D500D09531 /* AppDelegate.swift in Sources */,
 				8564D38E1A18491A00D8135E /* CLLoginView.swift in Sources */,
+				853CEA1D1A2C0146009EFAD1 /* SCLAlertView.swift in Sources */,
 				85C7719A1A230733008202DA /* TokenTest.swift in Sources */,
 				859B71CD19E507E0008D481C /* Media.swift in Sources */,
 				852DEB7E1A21BABB00BDB76E /* HelperApiController.swift in Sources */,
 				854B081B1A25B20B003FA04B /* CLPlaygroundView.swift in Sources */,
 				8598A8DE19A5A7EA00D09531 /* CLDraggableView.swift in Sources */,
 				852DEB7C1A21B3A300BDB76E /* LoginApiController.swift in Sources */,
+				853CEA1F1A2C071F009EFAD1 /* MediaImage.swift in Sources */,
 				854B08191A2527BF003FA04B /* UIImage+animatedGIF.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

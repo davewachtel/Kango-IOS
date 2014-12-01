@@ -82,7 +82,7 @@ class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
         
         if(segue.identifier == "LoginSuccessSegue")
         {
-            var mediaVC = segue.destinationViewController as CLMediaViewController;
+            var mediaVC = segue.destinationViewController as CLPlaygroundViewController;
             mediaVC.authToken = self.authToken;
         }
     }

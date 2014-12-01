@@ -87,15 +87,15 @@
             </objects>
             <point key="canvasLocation" x="1285" y="783"/>
         </scene>
-        <!--Media View Controller-->
+        <!--Playground View Controller-->
         <scene sceneID="Fug-Jx-oBo">
             <objects>
-                <viewController id="AFZ-Mt-EgH" customClass="CLMediaViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AFZ-Mt-EgH" customClass="CLPlaygroundViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ALh-MO-Fq7"/>
                         <viewControllerLayoutGuide type="bottom" id="RQd-ee-iKn"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="35O-Qf-5QB" customClass="CLDraggableView" customModule="Kango" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="35O-Qf-5QB" customClass="CLPlaygroundView" customModule="Kango" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -10,5 +10,8 @@ import Foundation
 
 class CLPlaygroundView : UIView
 {
-    
+    func initialize(imageView: UIImageView)
+    {
+        self.addSubview(imageView);
+    }
 }

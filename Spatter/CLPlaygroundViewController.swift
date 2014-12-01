@@ -8,12 +8,16 @@
 
 import UIKit
 
+protocol CLDraggableViewProtocol
+{
+    //func removeView
+}
 
-protocol CLMediaViewProtocol {
+protocol CLPlaygroundViewProtocol {
     func removeCurrentView()
 }
 
-class CLMediaViewController: GAITrackedViewController, MediaApiControllerProtocol, CLMediaViewProtocol {
+class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerProtocol, CLPlaygroundViewProtocol {
     
     var serial_queue: dispatch_queue_t;
 
@@ -39,6 +43,7 @@ class CLMediaViewController: GAITrackedViewController, MediaApiControllerProtoco
         
         var vBounds = UIScreen.mainScreen().bounds;
         
+        
         self.draggableView.bounds = vBounds;
         self.draggableView.frame = vBounds;
         
@@ -49,9 +54,12 @@ class CLMediaViewController: GAITrackedViewController, MediaApiControllerProtoco
     override func loadView() {
         super.loadView();
         
+        self.view.backgroundColor = UIColor.blackColor();
+        
+        
         //self.draggableView.setFrames();
-        //self.view.addSubview(self.draggableView);
-        self.view = self.draggableView;
+        self.view.addSubview(self.draggableView);
+        //self.view = self.draggableView;
         
         self.activityView.bounds = self.view.frame;
         self.activityView.center = self.view.center;
@@ -69,6 +77,15 @@ class CLMediaViewController: GAITrackedViewController, MediaApiControllerProtoco
     //Complete
     override func viewDidLoad() {
         super.viewDidLoad();
+        
+        let alert = SCLAlertView();
+        alert.addButton("Sign out") {
+            Token.clearToken();
+            self.navigationController?.popViewControllerAnimated(true);
+        };
+        
+        //alert.view = self.view;
+        alert.showTitle("Welcome back!", subTitle: self.authToken!.getUsername(), duration: NSTimeInterval(5), completeText: "Hide", style: SCLAlertViewStyle.Info);
         
         if (self.swipeImages.count == 0) {
             api.getNextContent();

@@ -16,7 +16,7 @@ class CLDraggableView: UIView
     var overlayView: CLOverlayView;
     var imageView: UIImageView;
     
-    var delegate:CLMediaViewProtocol?;
+    var delegate:CLPlaygroundViewProtocol?;
     
     
     required init(coder aDecoder: NSCoder) {

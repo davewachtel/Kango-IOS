@@ -66,16 +66,23 @@ class Token {
     class func loadValidToken() -> Token?
     {
         var defaults =  NSUserDefaults.standardUserDefaults();
-        var jsonStr = defaults.objectForKey("token") as NSDictionary;
+        var obj: AnyObject? = defaults.objectForKey("token");
         
-        var token = Token(data: jsonStr);
-        if(token.isExpired())
+        if(obj != nil)
         {
-            Token.clearToken();
-            return nil;
+            var jsonStr = obj as NSDictionary;
+        
+            var token = Token(data: jsonStr);
+            if(token.isExpired())
+            {
+                Token.clearToken();
+                return nil;
+            }
+        
+            return token;
         }
         
-        return token;
+        return nil;
     }
     
     class func clearToken() -> Void
