@@ -31,6 +31,36 @@ class MediaApiController {
         self.authToken = token;
     }
     
+    func markViewed(media: Media, wasLiked: Bool)
+    {
+        let path = HelperApiController.BaseUrl() + "api/view";
+
+        var helper = HelperApiController();
+        
+        let url = NSURL(string: path);
+        let session = NSURLSession.sharedSession();
+        var request = NSMutableURLRequest(URL: url!);
+
+        request.HTTPMethod = "POST";
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type");
+        
+        let strAuth = NSString(format: "%@ %@", self.authToken.getType(), self.authToken.getToken());
+        request.addValue(strAuth,  forHTTPHeaderField: "Authorization");
+        
+        var data = View(assetId: media.id, duration: 99, isLiked: wasLiked);
+        
+        
+        var error : NSError?;
+        
+        var dic = ["assetId": data.assetId, "duration": data.duration, "isLiked": data.isLiked];
+        let json = NSJSONSerialization.dataWithJSONObject(dic, options: nil, error: &error)
+        request.HTTPBody = json
+        
+        let task = session.dataTaskWithRequest(request);
+        task.resume()
+    }
+    
     func get(path: String) {
         if(self.isInProgress){
             return;

@@ -14,7 +14,7 @@ protocol CLDraggableViewProtocol
 }
 
 protocol CLPlaygroundViewProtocol {
-    func removeCurrentView()
+    func removeCurrentView(wasLiked: Bool)
 }
 
 class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerProtocol, CLPlaygroundViewProtocol {
@@ -28,7 +28,7 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
     var draggableView: CLDraggableView;
     var activityView: UIActivityIndicatorView;
     
-    var swipeImages: Array<UIImage> = [];
+    var swipeImages: Array<MediaImage> = [];
     
     var notFound:UIImage;
     
@@ -43,6 +43,8 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
         
         var vBounds = UIScreen.mainScreen().bounds;
         
+        //self.view.bounds = vBounds;
+        //self.view.frame = vBounds;
         
         self.draggableView.bounds = vBounds;
         self.draggableView.frame = vBounds;
@@ -85,7 +87,7 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
         };
         
         //alert.view = self.view;
-        alert.showTitle("Welcome back!", subTitle: self.authToken!.getUsername(), duration: NSTimeInterval(5), completeText: "Hide", style: SCLAlertViewStyle.Info);
+        alert.showTitle("Welcome back!", subTitle: self.authToken!.getUsername(), duration: NSTimeInterval(3), completeText: "Hide", style: SCLAlertViewStyle.Info);
         
         if (self.swipeImages.count == 0) {
             api.getNextContent();
@@ -121,19 +123,19 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
             }
             
             if(img != nil){
-                self.addImage(img!);
+                self.addMedia(MediaImage(media: media, img: img!));
             }
         });
         
     }
     
-    func addImage(img: UIImage)
+    func addMedia(media: MediaImage)
     {
         //dispatch_sync(serial_queue)
         //{
             var arrCount = self.swipeImages.count;
             var isEmpty = (arrCount == 0);
-            self.swipeImages.append(img);
+            self.swipeImages.append(media);
             
             if(isEmpty){
                 self.setNextImageView();
@@ -149,11 +151,11 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
         var arrCount = self.swipeImages.count;
         if(arrCount == 0)
         {
-            self.draggableView.setImage(self.notFound);
+            self.draggableView.setMedia(MediaImage(media: nil, img: self.notFound));
         }
         else
         {
-            self.draggableView.setImage(self.swipeImages[0]);
+            self.draggableView.setMedia(self.swipeImages[0]);
             if(self.activityView.isAnimating())
             {
                 self.activityView.stopAnimating();
@@ -162,12 +164,15 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
        // }
     }
     
-    func removeCurrentView()
+    func removeCurrentView(wasLiked: Bool)
     {
         dispatch_sync(serial_queue)
         {
             if(self.swipeImages.count > 0){
-                self.swipeImages.removeAtIndex(0);
+                let mediaImg = self.swipeImages.removeAtIndex(0);
+                if(mediaImg.media != nil){
+                    self.api.markViewed(mediaImg.media!, wasLiked: wasLiked);
+                }
             }
         }
         

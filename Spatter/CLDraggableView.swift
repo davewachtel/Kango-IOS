@@ -14,7 +14,9 @@ class CLDraggableView: UIView
     var panGestureRecognizer : UIPanGestureRecognizer;
     var originalPoint: CGPoint;
     var overlayView: CLOverlayView;
+    var mediaImage: MediaImage?;
     var imageView: UIImageView;
+    
     
     var delegate:CLPlaygroundViewProtocol?;
     
@@ -55,9 +57,10 @@ class CLDraggableView: UIView
         self.addSubview(self.overlayView);
     }
     
-    func setImage(img: UIImage)
+    func setMedia(media: MediaImage)
     {
-        self.imageView.image = img;
+        self.mediaImage = media;
+        self.imageView.image = media.img;
     }
 
     func dragged(rec: UIGestureRecognizer)
@@ -113,9 +116,9 @@ class CLDraggableView: UIView
         self.overlayView.alpha = CGFloat(overlayStrength);
     }
     
-    func removeLastView()
+    func removeLastView(wasLiked: Bool)
     {
-        self.delegate?.removeCurrentView();
+        self.delegate?.removeCurrentView(wasLiked);
         self.setNeedsDisplay();
     }
     
@@ -130,7 +133,10 @@ class CLDraggableView: UIView
         var overlayStrength = self.calculateDragStrength(distance);
         if(overlayStrength >= 0.4)
         {
-            self.removeLastView();
+            var wasLiked: Bool;
+            wasLiked = (distance > 0);
+            
+            self.removeLastView(wasLiked);
         }
     }
     

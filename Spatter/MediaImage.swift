@@ -10,10 +10,10 @@ import Foundation
 
 class MediaImage
 {
-    var media: Media;
+    var media: Media?;
     var img : UIImage;
     
-    func init(media: Media, img: UIImage)
+    init(media: Media?, img: UIImage)
     {
         self.media = media;
         self.img = img;

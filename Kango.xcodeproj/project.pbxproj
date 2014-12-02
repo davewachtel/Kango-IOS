@@ -13,6 +13,7 @@
 		852DEB801A21CD9000BDB76E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7F1A21CD9000BDB76E /* Token.swift */; };
 		853CEA1D1A2C0146009EFAD1 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853CEA1C1A2C0146009EFAD1 /* SCLAlertView.swift */; };
 		853CEA1F1A2C071F009EFAD1 /* MediaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853CEA1E1A2C071F009EFAD1 /* MediaImage.swift */; };
+		853CEA211A2C0B75009EFAD1 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853CEA201A2C0B75009EFAD1 /* View.swift */; };
 		853EBA1E1A18770400B28C99 /* CLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853EBA1D1A18770400B28C99 /* CLLoginViewController.swift */; };
 		854B080F1A252787003FA04B /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 854B080E1A252787003FA04B /* libGoogleAnalyticsServices.a */; };
 		854B08131A25279E003FA04B /* 404@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 854B08101A25279E003FA04B /* 404@2x.jpg */; };
@@ -56,6 +57,7 @@
 		852E01351A22565E00CFAD02 /* TokenTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenTest.swift; sourceTree = "<group>"; };
 		853CEA1C1A2C0146009EFAD1 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		853CEA1E1A2C071F009EFAD1 /* MediaImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaImage.swift; sourceTree = "<group>"; };
+		853CEA201A2C0B75009EFAD1 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		853EBA1D1A18770400B28C99 /* CLLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoginViewController.swift; sourceTree = "<group>"; };
 		854B08041A252787003FA04B /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Spatter/3rdParty/GoogleAnalytics/GAI.h; sourceTree = "<group>"; };
 		854B08051A252787003FA04B /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Spatter/3rdParty/GoogleAnalytics/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				859B71CC19E507E0008D481C /* Media.swift */,
 				852DEB7F1A21CD9000BDB76E /* Token.swift */,
 				853CEA1E1A2C071F009EFAD1 /* MediaImage.swift */,
+				853CEA201A2C0B75009EFAD1 /* View.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				85A326EB19E4EB32000E1FB5 /* MediaApiController.swift in Sources */,
 				852DEB801A21CD9000BDB76E /* Token.swift in Sources */,
 				853EBA1E1A18770400B28C99 /* CLLoginViewController.swift in Sources */,
+				853CEA211A2C0B75009EFAD1 /* View.swift in Sources */,
 				8598A8BE19A5A3D500D09531 /* CLPlaygroundViewController.swift in Sources */,
 				8598A8BC19A5A3D500D09531 /* AppDelegate.swift in Sources */,
 				8564D38E1A18491A00D8135E /* CLLoginView.swift in Sources */,
