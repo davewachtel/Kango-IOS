@@ -22,8 +22,12 @@ class CLLoginView : UIView
         spinner.hidden = false;
         
         self.delegate.authenticate(txtUsername.text, password: txtPassword.text, completion: { () in
-            self.spinner.stopAnimating();
-            self.spinner.hidden = true;
+            
+            dispatch_sync(dispatch_get_main_queue(), {
+                self.spinner.stopAnimating();
+                self.spinner.hidden = true;
+            });
+            
         });
     }
 }

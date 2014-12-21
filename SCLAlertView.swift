@@ -296,11 +296,11 @@ class SCLAlertView: UIViewController {
         
         // Icon style
         switch style {
-        case .Success:
+        case SCLAlertViewStyle.Success:
             viewColor = UIColorFromRGB(0x22B573)
             iconImage = SCLAlertViewStyleKit.imageOfCheckmark
             
-        case .Error:
+        case SCLAlertViewStyle.Error:
             viewColor = UIColorFromRGB(0xC1272D)
             iconImage = SCLAlertViewStyleKit.imageOfCross
             
@@ -342,9 +342,11 @@ class SCLAlertView: UIViewController {
         }
         
         // Done button
-        let txt = completeText != nil ? completeText! : "Done"
-        addButton(txt, target:self, selector:Selector("hideView"))
-        
+        if ( completeText != nil)
+        {
+            let txt = completeText!;
+            addButton(txt, target:self, selector:Selector("hideView"))
+        }
         // Alert view colour and images
         self.circleView.backgroundColor = viewColor
         self.circleIconImageView.image  = iconImage

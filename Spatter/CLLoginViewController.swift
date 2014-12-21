@@ -15,7 +15,6 @@ protocol CLLoginViewDelegate {
 class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
 {
     var api = LoginApiController();
-    var authToken: Token?;
     
     func authenticate(username: String, password: String, completion: () -> Void) {
         
@@ -32,16 +31,24 @@ class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
                     self.login_failed(message);
                     completion();
         });
-        
-        NSLog("authenticate");
     }
     
     func login_success(token: Token) -> Void
     {
         var success = token.saveToken();
-        self.authToken = token;
+        CLInstance.sharedInstance.authToken = token;
         
-        self.performSegueWithIdentifier("LoginSuccessSegue", sender: self);
+        if(NSThread.isMainThread())
+        {
+             self.performSegueWithIdentifier("LoginSuccessSegue", sender: self);
+        }
+        else
+        {
+            dispatch_sync(dispatch_get_main_queue(), {
+                self.performSegueWithIdentifier("LoginSuccessSegue", sender: self);
+            });
+        }
+        
     }
     
     func login_failed(message: String?) -> Void
@@ -52,11 +59,21 @@ class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
             msg = message!;
         }
         
-        var alert = UIAlertController(title: "Alert", message: msg, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        dispatch_sync(dispatch_get_main_queue(), {
+            
+            /* Do UI work here */
+            let alert = SCLAlertView();
+            alert.showError("Oops!", subTitle: msg, closeButtonTitle: "OK", duration: NSTimeInterval(3));
+            
+        });
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        //Track Screen
+        self.screenName = "Login";
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -67,7 +84,22 @@ class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
         var token = Token.loadValidToken();
         if(token != nil)
         {
-            self.login_success(token!);
+            let alert = SCLAlertView();
+            
+            alert.addButton("Do it!") {
+                self.login_success(token!);
+            }
+            
+            alert.addButton("No, thanks...") {
+                Token.clearToken();
+                self.navigationController?.popViewControllerAnimated(true);
+            };
+            
+            
+            var username = token!.getUsername();
+            /*
+                alert.showTitle("Login", subTitle: "Would you like to login as " + username + "?", duration: NSTimeInterval(5), completeText: nil, style: SCLAlertViewStyle.Info);
+            */
             
         }
     }
@@ -82,8 +114,7 @@ class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
         
         if(segue.identifier == "LoginSuccessSegue")
         {
-            var mediaVC = segue.destinationViewController as CLPlaygroundViewController;
-            mediaVC.authToken = self.authToken;
+            
         }
     }
 

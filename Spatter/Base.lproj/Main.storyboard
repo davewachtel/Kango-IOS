@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="M4i-bk-9ZT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="q1I-eS-Z8H">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Login-->
@@ -14,10 +14,10 @@
                         <viewControllerLayoutGuide type="bottom" id="M2u-RI-vNe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Sx4-6W-1UM" customClass="CLLoginView" customModule="Kango" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Kango" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqS-ed-8e9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to Kango" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqS-ed-8e9">
                                 <rect key="frame" x="211" y="144" width="179" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="179" id="tAL-gP-CuC"/>
@@ -26,7 +26,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXd-6g-NXU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXd-6g-NXU">
                                 <rect key="frame" x="192" y="188" width="216" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="216" id="iP8-Za-4Fm"/>
@@ -34,12 +34,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMT-Ol-1rc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMT-Ol-1rc">
                                 <rect key="frame" x="192" y="233" width="216" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KM8-FX-oyL">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KM8-FX-oyL">
                                 <rect key="frame" x="277" y="285" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="hSs-7U-r9H"/>
@@ -51,7 +51,7 @@
                                     <action selector="buttonTapped:" destination="Sx4-6W-1UM" eventType="touchUpInside" id="r8y-PS-LU4"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-4j-YLx">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-4j-YLx">
                                 <rect key="frame" x="290" y="92" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -75,53 +75,136 @@
                             <outlet property="txtUsername" destination="EXd-6g-NXU" id="lHB-KY-nxK"/>
                         </connections>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="tqL-Cc-XCh"/>
                     <keyCommands/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="AFZ-Mt-EgH" kind="show" identifier="LoginSuccessSegue" id="MMU-io-5z3"/>
+                        <segue destination="v29-Y7-cOJ" kind="show" identifier="LoginSuccessSegue" id="v1l-SC-rta"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xX-Fe-e9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1285" y="783"/>
+            <point key="canvasLocation" x="549" y="1000"/>
         </scene>
-        <!--Playground View Controller-->
+        <!--Playground-->
         <scene sceneID="Fug-Jx-oBo">
             <objects>
-                <viewController id="AFZ-Mt-EgH" customClass="CLPlaygroundViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Playground" id="AFZ-Mt-EgH" userLabel="Playground" customClass="CLPlaygroundViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ALh-MO-Fq7"/>
                         <viewControllerLayoutGuide type="bottom" id="RQd-ee-iKn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="35O-Qf-5QB" customClass="CLPlaygroundView" customModule="Kango" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="mmw-1m-wtS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUO-Ue-O6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3005" y="1501"/>
+        </scene>
+        <!--Inbox-->
+        <scene sceneID="gjP-ib-Vbf">
+            <objects>
+                <viewController title="Inbox" id="pzP-qX-yla" userLabel="Inbox" customClass="CLInboxViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Sd-G2-kHE"/>
+                        <viewControllerLayoutGuide type="bottom" id="gbD-8y-NlO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KqC-Jo-4Eg" customClass="CLInboxView" customModule="Kango" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="Vx5-Nh-nNH"/>
+                    <connections>
+                        <segue destination="iY7-Se-TMF" kind="showDetail" id="n6K-vK-6yU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VKo-fk-uvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2999" y="637"/>
+        </scene>
+        <!--Inbox Detail View Controller-->
+        <scene sceneID="914-5C-jFx">
+            <objects>
+                <viewController id="iY7-Se-TMF" customClass="CLInboxDetailViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Glj-6y-bun"/>
+                        <viewControllerLayoutGuide type="bottom" id="PaR-Dv-859"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vPu-0V-1Zl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BUO-Ue-O6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfP-oQ-KYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2109" y="737"/>
+            <point key="canvasLocation" x="3767" y="637"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Gdc-5l-Ha3">
+        <!--Kango-->
+        <scene sceneID="pfC-Ia-ST9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="M4i-bk-9ZT" sceneMemberID="viewController">
+                <tabBarController title="Kango" id="v29-Y7-cOJ" customClass="CLTabBarController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="3SX-cN-CER">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="yNg-t1-Gwm" kind="relationship" relationship="viewControllers" id="bbL-qV-8rx"/>
+                        <segue destination="WmI-fN-hkC" kind="relationship" relationship="viewControllers" id="cVC-rd-gjX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2R2-2Y-Eyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376" y="1000"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="msH-t5-H0C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yNg-t1-Gwm" customClass="CLNavigationController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="0gL-rE-fHH"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7rs-6P-DSo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0kM-Zd-lPL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="q1I-eS-Z8H" kind="relationship" relationship="rootViewController" id="Yez-WH-d6n"/>
+                        <segue destination="pzP-qX-yla" kind="relationship" relationship="rootViewController" id="t8p-I8-wJc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="quR-Ln-kpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zXZ-nA-Jzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="473" y="783"/>
+            <point key="canvasLocation" x="2193" y="637"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Z9K-89-cCQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WmI-fN-hkC" customClass="CLNavigationController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="m7A-DV-OWc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dmK-eC-hKt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AFZ-Mt-EgH" kind="relationship" relationship="rootViewController" id="nCf-EI-raI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iUF-Yw-LP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2193" y="1501"/>
         </scene>
     </scenes>
 </document>

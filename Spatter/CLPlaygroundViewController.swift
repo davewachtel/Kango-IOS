@@ -21,9 +21,7 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
     
     var serial_queue: dispatch_queue_t;
 
-    lazy var api : MediaApiController = MediaApiController(delegate: self, token: self.authToken!);
-    
-    var authToken: Token?;
+    lazy var api : MediaApiController = MediaApiController(delegate: self, token: CLInstance.sharedInstance.authToken!);
     
     var draggableView: CLDraggableView;
     var activityView: UIActivityIndicatorView;
@@ -45,6 +43,7 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
         
         //self.view.bounds = vBounds;
         //self.view.frame = vBounds;
+        
         
         self.draggableView.bounds = vBounds;
         self.draggableView.frame = vBounds;
@@ -76,26 +75,38 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
         self.screenName = "Playground Screen";
     }
     
+    
     //Complete
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        let alert = SCLAlertView();
-        alert.addButton("Sign out") {
-            Token.clearToken();
-            self.navigationController?.popViewControllerAnimated(true);
-        };
+        var item = UIBarButtonItem(image: UIImage(named: "burger"), style: UIBarButtonItemStyle.Bordered, target: self, action: "menu_lock");
+        item.title = "Menu";
         
-        //alert.view = self.view;
-        alert.showTitle("Welcome back!", subTitle: self.authToken!.getUsername(), duration: NSTimeInterval(3), completeText: "Hide", style: SCLAlertViewStyle.Info);
+        self.navigationItem.rightBarButtonItem = item;
+        self.navigationController?.navigationItem.rightBarButtonItem = item;
+        
         
         if (self.swipeImages.count == 0) {
             api.getNextContent();
         }
     }
     
+    
+    func menu_lock()
+    {
+        
+        if(self.tabBarController != nil)
+        {
+            (self.tabBarController as CLTabBarController).sidebar.showInViewController(self, animated: true)
+        }
+        
+    }
+    
     func downloadMedia(media: Media)
     {
+        if(!media.url.isEmpty)
+        {
         let url = NSURL(string: media.url);
         var request: NSURLRequest = NSURLRequest(URL:url!)
         
@@ -125,7 +136,8 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
             if(img != nil){
                 self.addMedia(MediaImage(media: media, img: img!));
             }
-        });
+            });
+        }
         
     }
     

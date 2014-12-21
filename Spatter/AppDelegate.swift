@@ -23,13 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         gaInstance.trackUncaughtExceptions = true;
         
         // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-        gaInstance.dispatchInterval = 20;
+        gaInstance.dispatchInterval = 30;
         
         // Optional: set Logger to VERBOSE for debug information.
         gaInstance.logger.logLevel = GAILogLevel.Verbose;
         
         // Initialize tracker. Replace with your tracking ID.
         gaInstance.trackerWithTrackingId("UA-56772093-1");
+        
+        // Status bar white font
+        application.statusBarHidden = false;
         
         return true;
     }
