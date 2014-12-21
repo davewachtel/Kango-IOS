@@ -73,6 +73,7 @@ class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
         
         //Track Screen
         self.screenName = "Login";
+        
     }
     
     override func viewDidLoad() {
@@ -81,10 +82,12 @@ class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
         var loginView = self.view as CLLoginView;
         loginView.delegate = self;
         
+        
         var token = Token.loadValidToken();
         if(token != nil)
         {
-            let alert = SCLAlertView();
+            var alert = SCLAlertView();
+            alert.parentView = self.view;
             
             alert.addButton("Do it!") {
                 self.login_success(token!);
@@ -94,15 +97,12 @@ class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
                 Token.clearToken();
                 self.navigationController?.popViewControllerAnimated(true);
             };
-            
-            
             var username = token!.getUsername();
-            /*
-                alert.showTitle("Login", subTitle: "Would you like to login as " + username + "?", duration: NSTimeInterval(5), completeText: nil, style: SCLAlertViewStyle.Info);
-            */
-            
+            alert.showTitle("Login", subTitle: "Would you like to login as " + username + "?", duration: NSTimeInterval(10), completeText: nil, style: SCLAlertViewStyle.Info);
         }
     }
+    
+    
     
     override func supportedInterfaceOrientations() -> Int {
         

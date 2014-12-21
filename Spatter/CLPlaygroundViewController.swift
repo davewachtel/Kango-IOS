@@ -8,64 +8,21 @@
 
 import UIKit
 
-protocol CLDraggableViewProtocol
-{
-    //func removeView
-}
-
-protocol CLPlaygroundViewProtocol {
-    func removeCurrentView(wasLiked: Bool)
-}
-
-class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerProtocol, CLPlaygroundViewProtocol {
+class CLPlaygroundViewController: CLDraggableViewController, MediaApiControllerProtocol {
     
     var serial_queue: dispatch_queue_t;
 
     lazy var api : MediaApiController = MediaApiController(delegate: self, token: CLInstance.sharedInstance.authToken!);
     
-    var draggableView: CLDraggableView;
-    var activityView: UIActivityIndicatorView;
-    
     var swipeImages: Array<MediaImage> = [];
     
-    var notFound:UIImage;
     
     required init(coder aDecoder: NSCoder) {
         
-        self.draggableView = CLDraggableView(coder: aDecoder);
-        self.activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge);
         self.serial_queue =  dispatch_queue_create("serial queue", nil);
-        self.notFound = UIImage(named: "404.jpg")!;
         
         super.init(coder: aDecoder);
         
-        var vBounds = UIScreen.mainScreen().bounds;
-        
-        //self.view.bounds = vBounds;
-        //self.view.frame = vBounds;
-        
-        
-        self.draggableView.bounds = vBounds;
-        self.draggableView.frame = vBounds;
-        
-        self.draggableView.delegate = self;
-    }
-    
-    //Start
-    override func loadView() {
-        super.loadView();
-        
-        self.view.backgroundColor = UIColor.blackColor();
-        
-        
-        //self.draggableView.setFrames();
-        self.view.addSubview(self.draggableView);
-        //self.view = self.draggableView;
-        
-        self.activityView.bounds = self.view.frame;
-        self.activityView.center = self.view.center;
-        self.activityView.startAnimating();
-        self.view.addSubview(activityView);
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -74,7 +31,6 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
         //Track Screen
         self.screenName = "Playground Screen";
     }
-    
     
     //Complete
     override func viewDidLoad() {
@@ -92,7 +48,6 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
         }
     }
     
-    
     func menu_lock()
     {
         
@@ -105,39 +60,16 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
     
     func downloadMedia(media: Media)
     {
-        if(!media.url.isEmpty)
-        {
-        let url = NSURL(string: media.url);
-        var request: NSURLRequest = NSURLRequest(URL:url!)
-        
-        NSURLConnection.sendAsynchronousRequest(request, queue:NSOperationQueue.mainQueue(), completionHandler: {(response : NSURLResponse!, data : NSData!, error : NSError!) in
-            
-            if (error != nil)
-            {
-                return;
-            }
-            
-            var img:UIImage?;
-            
-            switch(media.mediaTypeId)
-                {
-            case MediaType.Image.rawValue:
-                img = UIImage(data:data);
-                break;
-            case MediaType.Animation.rawValue:
-                img = UIImage.animatedImageWithAnimatedGIFData(data);
-                
-                break;
-            default:
-                NSException(name: "Not Supported", reason: "This media type is not supported.", userInfo: nil).raise();
-                break;
-            }
-            
-            if(img != nil){
-                self.addMedia(MediaImage(media: media, img: img!));
-            }
-            });
-        }
+        MediaApiController.downloadMedia(media, success: downloadMedia_success, error: downloadMedia_error);
+    }
+    
+    func downloadMedia_success(media: Media, img: UIImage)
+    {
+        self.addMedia(MediaImage(media: media, img: img));
+    }
+    
+    func downloadMedia_error()
+    {
         
     }
     
@@ -163,29 +95,25 @@ class CLPlaygroundViewController: GAITrackedViewController, MediaApiControllerPr
         var arrCount = self.swipeImages.count;
         if(arrCount == 0)
         {
-            self.draggableView.setMedia(MediaImage(media: nil, img: self.notFound));
+            self.setMedia(nil);
         }
         else
         {
-            self.draggableView.setMedia(self.swipeImages[0]);
-            if(self.activityView.isAnimating())
-            {
-                self.activityView.stopAnimating();
-            }
+            self.setMedia(self.swipeImages[0]);
         }
        // }
     }
     
-    func removeCurrentView(wasLiked: Bool)
-    {
+    override func onRemove(wasLiked: Bool) {
+        
         dispatch_sync(serial_queue)
-        {
-            if(self.swipeImages.count > 0){
-                let mediaImg = self.swipeImages.removeAtIndex(0);
-                if(mediaImg.media != nil){
-                    self.api.markViewed(mediaImg.media!, wasLiked: wasLiked);
+            {
+                if(self.swipeImages.count > 0){
+                    let mediaImg = self.swipeImages.removeAtIndex(0);
+                    if(mediaImg.media != nil){
+                        self.api.markViewed(mediaImg.media!, wasLiked: wasLiked);
+                    }
                 }
-            }
         }
         
         self.setNextImageView();

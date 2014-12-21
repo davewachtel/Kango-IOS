@@ -92,6 +92,8 @@ class SCLAlertView: UIViewController {
     private var inputs = [UITextField]()
     private var buttons = [SCLButton]()
     
+    var parentView: UIView?;
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("NSCoding not supported")
     }
@@ -142,6 +144,7 @@ class SCLAlertView: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName:nibNameOrNil, bundle:nibBundleOrNil)
     }
+    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -286,8 +289,12 @@ class SCLAlertView: UIViewController {
     // showTitle(view, title, subTitle, duration, style)
     func showTitle(title: String, subTitle: String, duration: NSTimeInterval?, completeText: String?, style: SCLAlertViewStyle) -> SCLAlertViewResponder {
         view.alpha = 0
-        let rv = UIApplication.sharedApplication().keyWindow?.subviews.first as UIView
-        rv.addSubview(view)
+        //let rv = UIApplication.sharedApplication().keyWindow?.subviews.first as UIView
+        //let rv = UIApplication.sharedApplication().delegate?.window??.subviews.first as UIView;
+        
+        let rv = self.parentView!;
+        rv.addSubview(view);
+        
         view.frame = rv.bounds
         
         // Alert colour/icon
@@ -296,11 +303,11 @@ class SCLAlertView: UIViewController {
         
         // Icon style
         switch style {
-        case SCLAlertViewStyle.Success:
+        case .Success:
             viewColor = UIColorFromRGB(0x22B573)
             iconImage = SCLAlertViewStyleKit.imageOfCheckmark
             
-        case SCLAlertViewStyle.Error:
+        case .Error:
             viewColor = UIColorFromRGB(0xC1272D)
             iconImage = SCLAlertViewStyleKit.imageOfCross
             

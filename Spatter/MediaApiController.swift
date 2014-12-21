@@ -124,6 +124,46 @@ class MediaApiController {
         task.resume()
     }
     
+    
+    class func downloadMedia(media: Media, success:(media: Media, img: UIImage) -> Void, error:() -> Void)
+    {
+        if(media.url.isEmpty)
+        {
+            error();
+            return;
+        }
+        
+        let nsUrl = NSURL(string: media.url);
+        var request: NSURLRequest = NSURLRequest(URL: nsUrl!)
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue:NSOperationQueue.mainQueue(), completionHandler: {(response : NSURLResponse!, data : NSData!, err : NSError!) in
+            
+            if (err != nil)
+            {
+                error();
+            }
+            
+            var img: UIImage?;
+            
+            switch(media.mediaTypeId)
+            {
+                case MediaType.Image.rawValue:
+                    img = UIImage(data:data);
+                    break;
+                case MediaType.Animation.rawValue:
+                    img = UIImage.animatedImageWithAnimatedGIFData(data);
+                    break;
+                default:
+                    NSException(name: "Not Supported", reason: "This media type is not supported.", userInfo: nil).raise();
+                    break;
+            }
+            
+            if(img != nil){
+                success(media: media, img: img!);
+            }
+        });
+    }
+    
     func getNextContent() {
         let urlPath = HelperApiController.BaseUrl() + "api/media?page=\(self.pageNum)&size=\(self.size)";
         get(urlPath)

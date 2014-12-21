@@ -21,10 +21,10 @@ class CLTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.navigationItem.hidesBackButton = true;
         
         sidebar = FrostedSidebar(itemImages: [
+            UIImage(named: "globe")!,
             UIImage(named: "star")!,
           //  UIImage(named: "gear")!,
      //       UIImage(named: "profile")!,
-            UIImage(named: "globe")!
             ],
             colors: [
                 UIColor(red: 240/255, green: 159/255, blue: 254/255, alpha: 1),

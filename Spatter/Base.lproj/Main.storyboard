@@ -122,7 +122,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Vx5-Nh-nNH"/>
                     <connections>
-                        <segue destination="iY7-Se-TMF" kind="showDetail" id="n6K-vK-6yU"/>
+                        <segue destination="iY7-Se-TMF" kind="presentation" identifier="InboxDetail" id="sVu-mP-L2B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKo-fk-uvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,7 +137,7 @@
                         <viewControllerLayoutGuide type="top" id="Glj-6y-bun"/>
                         <viewControllerLayoutGuide type="bottom" id="PaR-Dv-859"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vPu-0V-1Zl">
+                    <view key="view" contentMode="scaleToFill" id="vPu-0V-1Zl" customClass="CLInboxDetailView" customModule="Kango" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -145,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfP-oQ-KYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3767" y="637"/>
+            <point key="canvasLocation" x="3827" y="637"/>
         </scene>
         <!--Kango-->
         <scene sceneID="pfC-Ia-ST9">
@@ -160,8 +160,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="yNg-t1-Gwm" kind="relationship" relationship="viewControllers" id="bbL-qV-8rx"/>
                         <segue destination="WmI-fN-hkC" kind="relationship" relationship="viewControllers" id="cVC-rd-gjX"/>
+                        <segue destination="yNg-t1-Gwm" kind="relationship" relationship="viewControllers" id="3SM-MH-TNa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2R2-2Y-Eyx" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -35,6 +35,7 @@
 		859B71CD19E507E0008D481C /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B71CC19E507E0008D481C /* Media.swift */; };
 		85A326EB19E4EB32000E1FB5 /* MediaApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A326EA19E4EB32000E1FB5 /* MediaApiController.swift */; };
 		85B37E811A467DC500057DC1 /* CLDraggableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B37E801A467DC500057DC1 /* CLDraggableViewController.swift */; };
+		85B37E831A469F9200057DC1 /* CLInboxDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B37E821A469F9200057DC1 /* CLInboxDetailView.swift */; };
 		85C771981A230639008202DA /* TokenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E01351A22565E00CFAD02 /* TokenTest.swift */; };
 		85C771991A2306AB008202DA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7F1A21CD9000BDB76E /* Token.swift */; };
 		85C7719A1A230733008202DA /* TokenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E01351A22565E00CFAD02 /* TokenTest.swift */; };
@@ -115,6 +116,7 @@
 		859B71CC19E507E0008D481C /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		85A326EA19E4EB32000E1FB5 /* MediaApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaApiController.swift; sourceTree = "<group>"; };
 		85B37E801A467DC500057DC1 /* CLDraggableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLDraggableViewController.swift; sourceTree = "<group>"; };
+		85B37E821A469F9200057DC1 /* CLInboxDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLInboxDetailView.swift; sourceTree = "<group>"; };
 		85F64BFC1A3E97FF000B95FC /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Background.jpg; path = Spatter/Images/Background.jpg; sourceTree = "<group>"; };
 		85F64BFD1A3E97FF000B95FC /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burger.png; path = Spatter/Images/burger.png; sourceTree = "<group>"; };
 		85F64BFE1A3E97FF000B95FC /* burger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "burger@2x.png"; path = "Spatter/Images/burger@2x.png"; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				8564D38D1A18491A00D8135E /* CLLoginView.swift */,
 				854B081A1A25B20B003FA04B /* CLPlaygroundView.swift */,
 				85F64C181A3E998A000B95FC /* CLInboxView.swift */,
+				85B37E821A469F9200057DC1 /* CLInboxDetailView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				854B081B1A25B20B003FA04B /* CLPlaygroundView.swift in Sources */,
 				85F64C171A3E98CC000B95FC /* FrostedSidebar.swift in Sources */,
 				8598A8DE19A5A7EA00D09531 /* CLDraggableView.swift in Sources */,
+				85B37E831A469F9200057DC1 /* CLInboxDetailView.swift in Sources */,
 				852DEB7C1A21B3A300BDB76E /* LoginApiController.swift in Sources */,
 				85B37E811A467DC500057DC1 /* CLDraggableViewController.swift in Sources */,
 				853CEA1F1A2C071F009EFAD1 /* MediaImage.swift in Sources */,

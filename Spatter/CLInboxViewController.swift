@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class CLInboxViewController : UITableViewController
 {
     var messages = [InboxMessage]();
@@ -102,23 +101,20 @@ class CLInboxViewController : UITableViewController
         var msg = self.messages[indexPath.row];
         msg.isRead = true;
         
-        self.performSegueWithIdentifier("candyDetail", sender: tableView)
+        self.performSegueWithIdentifier("InboxDetail", sender: self)//tableView)
     }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        /*
-        if segue.identifier == "candyDetail" {
-            let candyDetailViewController = segue.destinationViewController as UIViewController
-            if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
-                let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
-                let destinationTitle = self.filteredCandies[indexPath.row].name
-                candyDetailViewController.title = destinationTitle
-            } else {
-                let indexPath = self.tableView.indexPathForSelectedRow()!
-                let destinationTitle = self.candies[indexPath.row].name
-                candyDetailViewController.title = destinationTitle
-            }
+        if(segue.identifier == "InboxDetail")
+        {
+            let inboxDetailVC = segue.destinationViewController as CLInboxDetailViewController;
+            let indexPath = self.tableView.indexPathForSelectedRow()!
+            
+            var msg = self.messages[indexPath.row];
+            
+            //let destinationTitle = self.messages[indexPath.row].med
+            inboxDetailVC.media = msg.media;
+            
         }
-        */
     }
 }
