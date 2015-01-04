@@ -145,6 +145,11 @@ class SCLAlertView: UIViewController {
         super.init(nibName:nibNameOrNil, bundle:nibBundleOrNil)
     }
     
+    convenience init(parent: UIView)
+    {
+        self.init();
+        self.parentView = parent;
+    }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()

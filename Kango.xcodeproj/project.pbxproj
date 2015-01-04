@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		852C9E2B19D125370036D3FC /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852C9E2A19D125370036D3FC /* ImageIO.framework */; };
-		852DEA3D1A42A38E008DCBC3 /* CLNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEA3C1A42A38E008DCBC3 /* CLNavigationController.swift */; };
 		852DEB7C1A21B3A300BDB76E /* LoginApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7B1A21B3A300BDB76E /* LoginApiController.swift */; };
 		852DEB7E1A21BABB00BDB76E /* HelperApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7D1A21BABB00BDB76E /* HelperApiController.swift */; };
 		852DEB801A21CD9000BDB76E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7F1A21CD9000BDB76E /* Token.swift */; };
+		8534EB301A4CCD1200B0B66D /* ShareApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8534EB2F1A4CCD1200B0B66D /* ShareApiController.swift */; };
+		8534EB341A4CCF4400B0B66D /* CLShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8534EB331A4CCF4400B0B66D /* CLShareViewController.swift */; };
+		8534EB361A4CCF7500B0B66D /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8534EB351A4CCF7500B0B66D /* Contact.swift */; };
+		8534EB381A4D1A2E00B0B66D /* CLShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8534EB371A4D1A2D00B0B66D /* CLShareView.swift */; };
 		853CEA1D1A2C0146009EFAD1 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853CEA1C1A2C0146009EFAD1 /* SCLAlertView.swift */; };
 		853CEA1F1A2C071F009EFAD1 /* MediaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853CEA1E1A2C071F009EFAD1 /* MediaImage.swift */; };
 		853CEA211A2C0B75009EFAD1 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853CEA201A2C0B75009EFAD1 /* View.swift */; };
+		853D27451A477D870079337F /* CLInboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D27441A477D870079337F /* CLInboxTableViewCell.swift */; };
+		853D27471A4781170079337F /* no_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853D27461A4781170079337F /* no_image@2x.png */; };
 		853EBA1E1A18770400B28C99 /* CLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853EBA1D1A18770400B28C99 /* CLLoginViewController.swift */; };
 		854B080F1A252787003FA04B /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 854B080E1A252787003FA04B /* libGoogleAnalyticsServices.a */; };
 		854B08131A25279E003FA04B /* 404@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 854B08101A25279E003FA04B /* 404@2x.jpg */; };
@@ -26,6 +31,7 @@
 		8564D3881A17CE2600D8135E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8564D3871A17CE2600D8135E /* SystemConfiguration.framework */; };
 		8564D38A1A17CE4300D8135E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8564D3891A17CE4300D8135E /* libz.dylib */; };
 		8564D38E1A18491A00D8135E /* CLLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564D38D1A18491A00D8135E /* CLLoginView.swift */; };
+		856E0CFF1A4A86BB00ABB0DC /* InboxApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856E0CFE1A4A86BB00ABB0DC /* InboxApiController.swift */; };
 		8598A8BC19A5A3D500D09531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8BB19A5A3D500D09531 /* AppDelegate.swift */; };
 		8598A8BE19A5A3D500D09531 /* CLPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8BD19A5A3D500D09531 /* CLPlaygroundViewController.swift */; };
 		8598A8C119A5A3D500D09531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8598A8BF19A5A3D500D09531 /* Main.storyboard */; };
@@ -73,14 +79,19 @@
 /* Begin PBXFileReference section */
 		852C9E2A19D125370036D3FC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		852C9E2D19D128620036D3FC /* Spatter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spatter-Bridging-Header.h"; sourceTree = "<group>"; };
-		852DEA3C1A42A38E008DCBC3 /* CLNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLNavigationController.swift; sourceTree = "<group>"; };
 		852DEB7B1A21B3A300BDB76E /* LoginApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginApiController.swift; sourceTree = "<group>"; };
 		852DEB7D1A21BABB00BDB76E /* HelperApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperApiController.swift; sourceTree = "<group>"; };
 		852DEB7F1A21CD9000BDB76E /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		852E01351A22565E00CFAD02 /* TokenTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenTest.swift; sourceTree = "<group>"; };
+		8534EB2F1A4CCD1200B0B66D /* ShareApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareApiController.swift; sourceTree = "<group>"; };
+		8534EB331A4CCF4400B0B66D /* CLShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLShareViewController.swift; sourceTree = "<group>"; };
+		8534EB351A4CCF7500B0B66D /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		8534EB371A4D1A2D00B0B66D /* CLShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLShareView.swift; sourceTree = "<group>"; };
 		853CEA1C1A2C0146009EFAD1 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		853CEA1E1A2C071F009EFAD1 /* MediaImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaImage.swift; sourceTree = "<group>"; };
 		853CEA201A2C0B75009EFAD1 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		853D27441A477D870079337F /* CLInboxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLInboxTableViewCell.swift; sourceTree = "<group>"; };
+		853D27461A4781170079337F /* no_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "no_image@2x.png"; path = "Spatter/Images/no_image@2x.png"; sourceTree = "<group>"; };
 		853EBA1D1A18770400B28C99 /* CLLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoginViewController.swift; sourceTree = "<group>"; };
 		854B08041A252787003FA04B /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Spatter/3rdParty/GoogleAnalytics/GAI.h; sourceTree = "<group>"; };
 		854B08051A252787003FA04B /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Spatter/3rdParty/GoogleAnalytics/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
@@ -103,6 +114,7 @@
 		8564D3871A17CE2600D8135E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8564D3891A17CE4300D8135E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8564D38D1A18491A00D8135E /* CLLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoginView.swift; sourceTree = "<group>"; };
+		856E0CFE1A4A86BB00ABB0DC /* InboxApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxApiController.swift; sourceTree = "<group>"; };
 		8598A8B619A5A3D500D09531 /* Kango.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kango.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8598A8BA19A5A3D500D09531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8598A8BB19A5A3D500D09531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,8 +190,18 @@
 				852DEB7D1A21BABB00BDB76E /* HelperApiController.swift */,
 				852DEB7B1A21B3A300BDB76E /* LoginApiController.swift */,
 				85A326EA19E4EB32000E1FB5 /* MediaApiController.swift */,
+				856E0CFE1A4A86BB00ABB0DC /* InboxApiController.swift */,
+				8534EB2F1A4CCD1200B0B66D /* ShareApiController.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		853D27431A477D4E0079337F /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				853D27441A477D870079337F /* CLInboxTableViewCell.swift */,
+			);
+			name = TableCells;
 			sourceTree = "<group>";
 		};
 		854B08021A252764003FA04B /* 3rdParty */ = {
@@ -289,12 +311,14 @@
 		8598A8D819A5A7A100D09531 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				853D27431A477D4E0079337F /* TableCells */,
 				8598A8DD19A5A7EA00D09531 /* CLDraggableView.swift */,
 				8598A8DF19A5A93800D09531 /* CLOverlayView.swift */,
 				8564D38D1A18491A00D8135E /* CLLoginView.swift */,
 				854B081A1A25B20B003FA04B /* CLPlaygroundView.swift */,
 				85F64C181A3E998A000B95FC /* CLInboxView.swift */,
 				85B37E821A469F9200057DC1 /* CLInboxDetailView.swift */,
+				8534EB371A4D1A2D00B0B66D /* CLShareView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -308,8 +332,8 @@
 				85F64C141A3E9895000B95FC /* CLTabBarController.swift */,
 				85F64C1A1A3E99A9000B95FC /* CLInboxViewController.swift */,
 				85FB00A61A461D050084F3FF /* CLInboxDetailViewController.swift */,
-				852DEA3C1A42A38E008DCBC3 /* CLNavigationController.swift */,
 				85B37E801A467DC500057DC1 /* CLDraggableViewController.swift */,
+				8534EB331A4CCF4400B0B66D /* CLShareViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -322,6 +346,7 @@
 				853CEA1E1A2C071F009EFAD1 /* MediaImage.swift */,
 				853CEA201A2C0B75009EFAD1 /* View.swift */,
 				85F64C1C1A3FE9B0000B95FC /* InboxMessage.swift */,
+				8534EB351A4CCF7500B0B66D /* Contact.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -329,6 +354,7 @@
 		85F64BFB1A3E97E2000B95FC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				853D27461A4781170079337F /* no_image@2x.png */,
 				85F64BFC1A3E97FF000B95FC /* Background.jpg */,
 				85F64BFD1A3E97FF000B95FC /* burger.png */,
 				85F64BFE1A3E97FF000B95FC /* burger@2x.png */,
@@ -427,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85F64C0B1A3E97FF000B95FC /* click.gif in Resources */,
+				853D27471A4781170079337F /* no_image@2x.png in Resources */,
 				85F64C0F1A3E97FF000B95FC /* globe@2x.png in Resources */,
 				854B08151A25279E003FA04B /* cross_300x300@2x.png in Resources */,
 				85F64C0A1A3E97FF000B95FC /* burger@2x.png in Resources */,
@@ -460,18 +487,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				852DEA3D1A42A38E008DCBC3 /* CLNavigationController.swift in Sources */,
 				8598A8E019A5A93800D09531 /* CLOverlayView.swift in Sources */,
 				85A326EB19E4EB32000E1FB5 /* MediaApiController.swift in Sources */,
+				853D27451A477D870079337F /* CLInboxTableViewCell.swift in Sources */,
 				85F64C1D1A3FE9B0000B95FC /* InboxMessage.swift in Sources */,
 				852DEB801A21CD9000BDB76E /* Token.swift in Sources */,
 				853EBA1E1A18770400B28C99 /* CLLoginViewController.swift in Sources */,
 				85F64C1B1A3E99A9000B95FC /* CLInboxViewController.swift in Sources */,
+				8534EB341A4CCF4400B0B66D /* CLShareViewController.swift in Sources */,
 				85FB00A51A4615E90084F3FF /* CLInstance.swift in Sources */,
+				8534EB381A4D1A2E00B0B66D /* CLShareView.swift in Sources */,
 				853CEA211A2C0B75009EFAD1 /* View.swift in Sources */,
 				8598A8BE19A5A3D500D09531 /* CLPlaygroundViewController.swift in Sources */,
 				85F64C191A3E998A000B95FC /* CLInboxView.swift in Sources */,
 				8598A8BC19A5A3D500D09531 /* AppDelegate.swift in Sources */,
+				8534EB361A4CCF7500B0B66D /* Contact.swift in Sources */,
 				8564D38E1A18491A00D8135E /* CLLoginView.swift in Sources */,
 				853CEA1D1A2C0146009EFAD1 /* SCLAlertView.swift in Sources */,
 				85C7719A1A230733008202DA /* TokenTest.swift in Sources */,
@@ -484,7 +514,9 @@
 				852DEB7C1A21B3A300BDB76E /* LoginApiController.swift in Sources */,
 				85B37E811A467DC500057DC1 /* CLDraggableViewController.swift in Sources */,
 				853CEA1F1A2C071F009EFAD1 /* MediaImage.swift in Sources */,
+				8534EB301A4CCD1200B0B66D /* ShareApiController.swift in Sources */,
 				85F64C151A3E9895000B95FC /* CLTabBarController.swift in Sources */,
+				856E0CFF1A4A86BB00ABB0DC /* InboxApiController.swift in Sources */,
 				85FB00A71A461D050084F3FF /* CLInboxDetailViewController.swift in Sources */,
 				854B08191A2527BF003FA04B /* UIImage+animatedGIF.m in Sources */,
 			);

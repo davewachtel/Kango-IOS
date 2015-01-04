@@ -31,6 +31,12 @@ class Token {
     {
             return self.dicData.objectForKey("access_token") as String;
     }
+    
+    func getUserId() -> String
+    {
+        return self.dicData.objectForKey("userId") as String;
+    }
+    
     func getUsername() -> String
     {
         return self.dicData.objectForKey("userName") as String;

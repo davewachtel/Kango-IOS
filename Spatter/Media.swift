@@ -20,6 +20,7 @@ class Media {
     var id: Int
     var mediaTypeId: Int
     
+    
     init(id: Int, title: String, url: String, mediaTypeId: Int)  {
         self.id = id;
         self.title = title;

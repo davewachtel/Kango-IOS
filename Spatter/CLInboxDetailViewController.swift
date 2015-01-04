@@ -11,7 +11,7 @@ import Foundation
 
 class CLInboxDetailViewController : CLDraggableViewController
 {
-    var media: Media?;
+    var assetId: Int?;
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
@@ -20,16 +20,21 @@ class CLInboxDetailViewController : CLDraggableViewController
     }
     
     override func onRemove(wasLiked: Bool) {
-        
-        self.dismissViewControllerAnimated(true, completion: nil);
+        self.navigationController?.popViewControllerAnimated(true);
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        if(media != nil)
+        if(assetId != nil)
         {
-            self.downloadMedia(media!);
+            MediaApiController.getMedia(self.assetId!, success: { (media: Media) -> Void in
+                
+                self.downloadMedia(media);
+                
+            }, error: { () -> Void in
+                
+            });
         }
     }
     

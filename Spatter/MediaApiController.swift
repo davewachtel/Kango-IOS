@@ -124,6 +124,25 @@ class MediaApiController {
         task.resume()
     }
     
+    class func getMedia(assetId: Int, success:(Media) -> Void, error: () -> Void)
+    {
+        var path = HelperApiController.BaseUrl() + "api/media/" + String(assetId);
+        let helper = HelperApiController();
+        
+        helper.get(nil, url: path) { (succeeded, data) -> () in
+            if(succeeded)
+            {
+                let mediaArray: [Media] = Media.mediaWithJSON([data]);
+                let media = mediaArray[0];
+                
+                success(media);
+            }
+            else
+            {
+                error();
+            }
+        }
+    }
     
     class func downloadMedia(media: Media, success:(media: Media, img: UIImage) -> Void, error:() -> Void)
     {

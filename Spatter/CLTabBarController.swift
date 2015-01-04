@@ -18,7 +18,7 @@ class CLTabBarController: UITabBarController, UITabBarControllerDelegate {
         delegate = self;
         tabBar.hidden = true;
         
-        self.navigationItem.hidesBackButton = true;
+        //self.navigationItem.hidesBackButton = true;
         
         sidebar = FrostedSidebar(itemImages: [
             UIImage(named: "globe")!,

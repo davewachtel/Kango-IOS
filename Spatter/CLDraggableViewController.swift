@@ -10,13 +10,15 @@ import Foundation
 
 
 protocol CLDraggableViewProtocol {
-    func removeCurrentView(wasLiked: Bool)
+    func removeCurrentView(wasLiked: Bool);
+    func share();
 }
 
 class CLDraggableViewController : GAITrackedViewController, CLDraggableViewProtocol
 {
     var draggableView: CLDraggableView;
     var activityView: UIActivityIndicatorView;
+    
     var notFound:UIImage;
     
     
@@ -41,13 +43,18 @@ class CLDraggableViewController : GAITrackedViewController, CLDraggableViewProto
         
         self.view.backgroundColor = UIColor.blackColor();
         
-        
-        self.view.addSubview(self.draggableView);
+        self.view = self.draggableView;
+        //self.view.addSubview(self.draggableView);
         
         self.activityView.bounds = self.view.frame;
         self.activityView.center = self.view.center;
         self.activityView.startAnimating();
         self.view.addSubview(activityView);
+    }
+    
+    func share()
+    {
+        self.performSegueWithIdentifier("Share", sender: self);
     }
     
     func removeCurrentView(wasLiked: Bool)
@@ -58,6 +65,23 @@ class CLDraggableViewController : GAITrackedViewController, CLDraggableViewProto
     func onRemove(wasLiked: Bool)
     {
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if(segue.identifier == "Share")
+        {
+            
+            var shareVC = segue.destinationViewController as CLShareViewController;
+            if(self.draggableView.mediaImage != nil)
+            {
+                if(self.draggableView.mediaImage!.media != nil)
+                {
+                    shareVC.title = "Share";
+                    shareVC.assetId = self.draggableView.mediaImage!.media!.id;
+                }
+            }
+
+        }
     }
     
     func setMedia(media: MediaImage?)

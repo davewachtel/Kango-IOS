@@ -15,6 +15,8 @@ class CLDraggableView: UIView
     var originalPoint: CGPoint;
     var overlayView: CLOverlayView;
     var mediaImage: MediaImage?;
+    var shareButton: UIButton;
+    
     var imageView: UIImageView;
     
     
@@ -27,6 +29,7 @@ class CLDraggableView: UIView
         self.originalPoint = CGPoint();
         self.overlayView = CLOverlayView(coder: aDecoder);
         self.imageView = UIImageView();
+        self.shareButton = UIButton();
         
         super.init(coder: aDecoder);
         self.initialize();
@@ -37,6 +40,16 @@ class CLDraggableView: UIView
         
         self.overlayView.frame = self.bounds;
         self.imageView.frame = self.bounds;
+        
+        self.shareButton.frame.origin = self.getShareOrigin();
+    }
+    
+    func getShareOrigin() -> CGPoint
+    {
+        let x = self.bounds.width  - 70 - 10;
+        let y = self.bounds.height - 30 - 10;
+        
+        return CGPoint(x: x, y: y);
     }
     
     func initialize()
@@ -55,10 +68,23 @@ class CLDraggableView: UIView
         
         self.overlayView.alpha = 0;
         self.addSubview(self.overlayView);
+        
+        
+        self.shareButton.frame = CGRect(origin: self.getShareOrigin(), size: CGSize(width: 70, height: 30));
+        self.shareButton.backgroundColor = UIColor.greenColor()
+        self.shareButton.setTitle("Share", forState: UIControlState.Normal)
+        self.shareButton.addTarget(self, action: "shareAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.addSubview(self.shareButton);
+    }
+    
+    func shareAction(sender:UIButton!)
+    {
+        self.delegate?.share();
     }
     
     func setMedia(media: MediaImage)
     {
+        self.shareButton.hidden = false;
         self.mediaImage = media;
         self.imageView.image = media.img;
     }
@@ -118,7 +144,9 @@ class CLDraggableView: UIView
     
     func removeLastView(wasLiked: Bool)
     {
+        self.shareButton.hidden = true;
         self.delegate?.removeCurrentView(wasLiked);
+        
         self.setNeedsDisplay();
     }
     

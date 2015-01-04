@@ -13,7 +13,7 @@ class LoginApiController
     func login(username: NSString, password: NSString, success:(token: Token) -> Void, error:(message: String?) -> Void)
     {
         let request: HelperApiController = HelperApiController();
-        request.post(["grant_type" : "password", "username": username, "password" : password], isJSON: false, url: HelperApiController.BaseUrl() + "oauth/token", method: "POST", postCompleted: { (succeeded: Bool, data: NSDictionary) -> () in
+        request.post(["grant_type" : "password", "username": username, "password" : password], isJSON: false, url: HelperApiController.BaseUrl() + "oauth/token", done: { (succeeded: Bool, data: NSDictionary) -> () in
             
             if(succeeded)
             {

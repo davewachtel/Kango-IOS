@@ -30,6 +30,8 @@ class CLPlaygroundViewController: CLDraggableViewController, MediaApiControllerP
         
         //Track Screen
         self.screenName = "Playground Screen";
+        
+        self.title = "Kango";
     }
     
     //Complete

@@ -14,58 +14,44 @@ class CLInboxViewController : UITableViewController
     
     
     override func viewDidLoad() {
-        /*
-        {
-        "id": 2288,
-        "mediatype": 1,
-        "title": "Yellow Brick Road!",
-        "url": "http://r2-store.distractify.netdna-cdn.com/postimage/201410/10/7fe96376a7181fc4ec75686580e59f14_970x.jpg"
-        },
-        {
-        "id": 197,
-        "mediatype": 2,
-        "title": "There are no accidents",
-        "url": "http://i.imgur.com/PPzqM1E.gif"
-        },
-        {
-        "id": 2609,
-        "mediatype": 2,
-        "title": "Miss",
-        "url": "http://i.imgur.com/jjSIae0.gif"
-        },
-        {
-        "id": 2598,
-        "mediatype": 2,
-        "title": "monkey see monkey do",
-        "url": "http://stream1.gifsoup.com/view2/2061786/kid-will-do-anything-for-candy-o.gif"
-        },
-        {
-        "id": 2286,
-        "mediatype": 1,
-        "title": "Life of Pi",
-        "url": "http://r2-store.distractify.netdna-cdn.com/postimage/201410/10/66012eaacb0dfc900f5538572519b3f9_970x.jpg"
-        }
-        */
-        self.messages = [
-            InboxMessage(media: Media(id: 2288, title: "Yellow Brick Road!", url: "http://r2-store.distractify.netdna-cdn.com/postimage/201410/10/7fe96376a7181fc4ec75686580e59f14_970x.jpg", mediaTypeId: 1), isRead: false),
-            InboxMessage(media: Media(id: 197, title: "There are no accidents", url: "http://i.imgur.com/PPzqM1E.gif", mediaTypeId: 2), isRead: true),
-            InboxMessage(media: Media(id: 2609, title: "Miss", url: "http://i.imgur.com/jjSIae0.gif", mediaTypeId: 2), isRead: false),
-            InboxMessage(media: Media(id: 2598, title: "monkey see monkey do", url: "http://stream1.gifsoup.com/view2/2061786/kid-will-do-anything-for-candy-o.gif", mediaTypeId: 2), isRead: false),
-            InboxMessage(media: Media(id: 2286, title: "Life of Pi", url: "http://r2-store.distractify.netdna-cdn.com/postimage/201410/10/66012eaacb0dfc900f5538572519b3f9_970x.jpg", mediaTypeId: 1), isRead: true),
         
-        ];
+        super.viewDidLoad();
         
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "CLInboxTableViewCell")
         
         var item = UIBarButtonItem(image: UIImage(named: "burger"), style: UIBarButtonItemStyle.Bordered, target: self, action: "menu_lock");
         item.title = "Menu";
         
         self.navigationItem.rightBarButtonItem = item;
-        self.navigationController?.navigationItem.rightBarButtonItem = item;
+        //self.navigationController?.navigationItem.rightBarButtonItem = item;
         
-        
-        // Reload the table
-        self.tableView.reloadData()
+        //Allow Delete.
+        self.tableView.allowsMultipleSelectionDuringEditing = true;
+     
+        let userId = CLInstance.sharedInstance.authToken!.getUserId();
+        let api = InboxApiController(token: CLInstance.sharedInstance.authToken!);
+        api.getInbox(userId, { (msgArray: [InboxMessage]) -> Void in
+            
+            self.messages = msgArray;
+            
+            
+            if(NSThread.isMainThread())
+            {
+                // Reload the table
+                self.tableView.reloadData();
+            }
+            else
+            {
+                dispatch_sync(dispatch_get_main_queue(), {
+                    // Reload the table
+                    self.tableView.reloadData();
+                });
+            }
+            
+            
+            }, error: { (message) -> Void in
+                
+        });
     }
     
     func menu_lock()
@@ -84,16 +70,30 @@ class CLInboxViewController : UITableViewController
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //ask for a reusable cell from the tableview, the tableview will create a new one if it doesn't have any
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        //let tc: AnyObject? = self.tableView.dequeueReusableCellWithIdentifier("cell");
+        
+        let cell : CLInboxTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell" ,forIndexPath: indexPath) as CLInboxTableViewCell;
         
         var msg : InboxMessage
         msg = self.messages[indexPath.row];
         
-        // Configure the cell
-        cell.textLabel!.text = msg.media.title;
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.bind(msg);
         
         return cell
+    }
+   
+    /*
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true;
+    }
+    */
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if(editingStyle == UITableViewCellEditingStyle.Delete)
+        {
+            self.messages.removeAtIndex(indexPath.row);
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic);
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -101,19 +101,22 @@ class CLInboxViewController : UITableViewController
         var msg = self.messages[indexPath.row];
         msg.isRead = true;
         
-        self.performSegueWithIdentifier("InboxDetail", sender: self)//tableView)
+        self.performSegueWithIdentifier("InboxDetail", sender: self);
+        
+        
+        self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None);
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "InboxDetail")
         {
+            
             let inboxDetailVC = segue.destinationViewController as CLInboxDetailViewController;
             let indexPath = self.tableView.indexPathForSelectedRow()!
             
             var msg = self.messages[indexPath.row];
             
-            //let destinationTitle = self.messages[indexPath.row].med
-            inboxDetailVC.media = msg.media;
+            inboxDetailVC.assetId = msg.assetId;
             
         }
     }

@@ -62,7 +62,7 @@ class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
         dispatch_sync(dispatch_get_main_queue(), {
             
             /* Do UI work here */
-            let alert = SCLAlertView();
+            var alert = SCLAlertView(parent: self.view);
             alert.showError("Oops!", subTitle: msg, closeButtonTitle: "OK", duration: NSTimeInterval(3));
             
         });
@@ -86,9 +86,7 @@ class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
         var token = Token.loadValidToken();
         if(token != nil)
         {
-            var alert = SCLAlertView();
-            alert.parentView = self.view;
-            
+            var alert = SCLAlertView(parent: self.view);
             alert.addButton("Do it!") {
                 self.login_success(token!);
             }

@@ -3,21 +3,117 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Login-->
+        <!--Share-->
+        <scene sceneID="sDE-wR-fv8">
+            <objects>
+                <tableViewController title="Share" id="tqh-p0-mfM" customClass="CLShareViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ig6-ZJ-Ywi" customClass="CLShareView" customModule="Kango" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Header" id="pHX-td-C8n">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pHX-td-C8n" id="v6o-1j-t9A">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHK-Mw-W22">
+                                            <rect key="frame" x="8" y="22" width="54" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="54" id="cRY-Td-bhW"/>
+                                            </constraints>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancel:" destination="ig6-ZJ-Ywi" eventType="touchUpInside" id="D0o-xe-YmB"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4f-vi-HTC">
+                                            <rect key="frame" x="275" y="26" width="50" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="c9l-Sh-ARm"/>
+                                            </constraints>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Share">
+                                                    <attributes>
+                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m0-dK-wxj">
+                                            <rect key="frame" x="545" y="22" width="47" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="47" id="bDm-W2-QcT"/>
+                                            </constraints>
+                                            <state key="normal" title="Share">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="share:" destination="ig6-ZJ-Ywi" eventType="touchUpInside" id="ih8-Od-tNW"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3m0-dK-wxj" firstAttribute="baseline" secondItem="eHK-Mw-W22" secondAttribute="baseline" id="IFl-JI-jf7"/>
+                                        <constraint firstItem="a4f-vi-HTC" firstAttribute="centerX" secondItem="v6o-1j-t9A" secondAttribute="centerX" id="Y2L-PR-cYY"/>
+                                        <constraint firstItem="3m0-dK-wxj" firstAttribute="trailing" secondItem="v6o-1j-t9A" secondAttribute="trailingMargin" id="Yth-NX-kKH"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="a4f-vi-HTC" secondAttribute="bottom" constant="-12" id="keb-W0-mGK"/>
+                                        <constraint firstItem="eHK-Mw-W22" firstAttribute="baseline" secondItem="a4f-vi-HTC" secondAttribute="firstBaseline" id="mb1-6u-JUp"/>
+                                        <constraint firstItem="eHK-Mw-W22" firstAttribute="leading" secondItem="v6o-1j-t9A" secondAttribute="leadingMargin" id="vkH-aM-KHy"/>
+                                        <constraint firstItem="a4f-vi-HTC" firstAttribute="top" secondItem="v6o-1j-t9A" secondAttribute="topMargin" constant="18" id="vuo-SP-rLW"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="2LU-l6-tYD" style="IBUITableViewCellStyleDefault" id="ZaW-3f-Sn9">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZaW-3f-Sn9" id="kaf-qU-8mv">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2LU-l6-tYD">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tqh-p0-mfM" id="vsF-Bo-r8i"/>
+                            <outlet property="delegate" destination="tqh-p0-mfM" id="Tgm-jP-0tF"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QSo-OB-OBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3811" y="1499"/>
+        </scene>
+        <!--Kango-->
         <scene sceneID="XLo-9W-uPE">
             <objects>
-                <viewController title="Login" id="q1I-eS-Z8H" customClass="CLLoginViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Kango" id="q1I-eS-Z8H" customClass="CLLoginViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xj5-cq-SD7"/>
                         <viewControllerLayoutGuide type="bottom" id="M2u-RI-vNe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Sx4-6W-1UM" customClass="CLLoginView" customModule="Kango" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="600" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to Kango" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqS-ed-8e9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Kango" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqS-ed-8e9">
                                 <rect key="frame" x="211" y="144" width="179" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="179" id="tAL-gP-CuC"/>
@@ -26,7 +122,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXd-6g-NXU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXd-6g-NXU">
                                 <rect key="frame" x="192" y="188" width="216" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="216" id="iP8-Za-4Fm"/>
@@ -34,12 +130,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMT-Ol-1rc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMT-Ol-1rc">
                                 <rect key="frame" x="192" y="233" width="216" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KM8-FX-oyL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KM8-FX-oyL">
                                 <rect key="frame" x="277" y="285" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="hSs-7U-r9H"/>
@@ -51,7 +147,7 @@
                                     <action selector="buttonTapped:" destination="Sx4-6W-1UM" eventType="touchUpInside" id="r8y-PS-LU4"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-4j-YLx">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-4j-YLx">
                                 <rect key="frame" x="290" y="92" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -75,7 +171,6 @@
                             <outlet property="txtUsername" destination="EXd-6g-NXU" id="lHB-KY-nxK"/>
                         </connections>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <keyCommands/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -90,68 +185,106 @@
         <!--Playground-->
         <scene sceneID="Fug-Jx-oBo">
             <objects>
-                <viewController title="Playground" id="AFZ-Mt-EgH" userLabel="Playground" customClass="CLPlaygroundViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Kango" id="AFZ-Mt-EgH" userLabel="Playground" customClass="CLPlaygroundViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ALh-MO-Fq7"/>
                         <viewControllerLayoutGuide type="bottom" id="RQd-ee-iKn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="35O-Qf-5QB" customClass="CLPlaygroundView" customModule="Kango" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="mmw-1m-wtS"/>
+                    <connections>
+                        <segue destination="tqh-p0-mfM" kind="presentation" identifier="Share" id="je1-JZ-UMa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUO-Ue-O6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3005" y="1501"/>
         </scene>
         <!--Inbox-->
-        <scene sceneID="gjP-ib-Vbf">
+        <scene sceneID="gjw-eE-fx8">
             <objects>
-                <viewController title="Inbox" id="pzP-qX-yla" userLabel="Inbox" customClass="CLInboxViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8Sd-G2-kHE"/>
-                        <viewControllerLayoutGuide type="bottom" id="gbD-8y-NlO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KqC-Jo-4Eg" customClass="CLInboxView" customModule="Kango" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                <tableViewController title="Inbox" id="07N-1S-EN0" customClass="CLInboxViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gIC-LF-zlC" customClass="CLInboxView" customModule="Kango" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="Vx5-Nh-nNH"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="dce-8O-Msg" customClass="CLInboxTableViewCell" customModule="Kango" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dce-8O-Msg" id="Alz-a4-Oso">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7n8-0n-26d">
+                                            <rect key="frame" x="0.0" y="-3" width="50" height="50"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bit-Ii-6O6">
+                                            <rect key="frame" x="58" y="8" width="450" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtH-vG-InP">
+                                            <rect key="frame" x="58" y="24" width="450" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imgUser" destination="7n8-0n-26d" id="4AM-hL-xgF"/>
+                                    <outlet property="lblTime" destination="NtH-vG-InP" id="UxJ-th-diY"/>
+                                    <outlet property="lblUserName" destination="bit-Ii-6O6" id="VRK-bF-3pL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="07N-1S-EN0" id="xkj-CN-fIw"/>
+                            <outlet property="delegate" destination="07N-1S-EN0" id="wK0-rC-lZA"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Inbox" id="Euf-AP-Cxx"/>
                     <connections>
-                        <segue destination="iY7-Se-TMF" kind="presentation" identifier="InboxDetail" id="sVu-mP-L2B"/>
+                        <segue destination="iY7-Se-TMF" kind="show" identifier="InboxDetail" id="X7j-k8-h6I"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VKo-fk-uvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qQi-AP-hst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2999" y="637"/>
+            <point key="canvasLocation" x="3005" y="665"/>
         </scene>
-        <!--Inbox Detail View Controller-->
+        <!--Details-->
         <scene sceneID="914-5C-jFx">
             <objects>
-                <viewController id="iY7-Se-TMF" customClass="CLInboxDetailViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Details" id="iY7-Se-TMF" customClass="CLInboxDetailViewController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Glj-6y-bun"/>
                         <viewControllerLayoutGuide type="bottom" id="PaR-Dv-859"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vPu-0V-1Zl" customClass="CLInboxDetailView" customModule="Kango" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <segue destination="tqh-p0-mfM" kind="presentation" identifier="Share" id="YuW-zB-F7b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfP-oQ-KYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3827" y="637"/>
+            <point key="canvasLocation" x="3829" y="665"/>
         </scene>
         <!--Kango-->
         <scene sceneID="pfC-Ia-ST9">
             <objects>
                 <tabBarController title="Kango" id="v29-Y7-cOJ" customClass="CLTabBarController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="3SX-cN-CER">
@@ -161,36 +294,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="WmI-fN-hkC" kind="relationship" relationship="viewControllers" id="cVC-rd-gjX"/>
-                        <segue destination="yNg-t1-Gwm" kind="relationship" relationship="viewControllers" id="3SM-MH-TNa"/>
+                        <segue destination="Z73-My-QGk" kind="relationship" relationship="viewControllers" id="mRs-kZ-9dv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2R2-2Y-Eyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1376" y="1000"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="msH-t5-H0C">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yNg-t1-Gwm" customClass="CLNavigationController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="0gL-rE-fHH"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0kM-Zd-lPL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="pzP-qX-yla" kind="relationship" relationship="rootViewController" id="t8p-I8-wJc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zXZ-nA-Jzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2193" y="637"/>
-        </scene>
-        <!--Item-->
+        <!--Kango-->
         <scene sceneID="Z9K-89-cCQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WmI-fN-hkC" customClass="CLNavigationController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController title="Kango" automaticallyAdjustsScrollViewInsets="NO" id="WmI-fN-hkC" customClass="CLNavigationController" customModule="Kango" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Item" id="m7A-DV-OWc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dmK-eC-hKt">
@@ -206,5 +321,28 @@
             </objects>
             <point key="canvasLocation" x="2193" y="1501"/>
         </scene>
+        <!--Kango-->
+        <scene sceneID="kvx-um-5ee">
+            <objects>
+                <navigationController title="Kango" automaticallyAdjustsScrollViewInsets="NO" id="Z73-My-QGk" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="ejY-4a-BQN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5PC-1e-aaS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="07N-1S-EN0" kind="relationship" relationship="rootViewController" id="meF-Ci-id5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evY-fN-02G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2193" y="667"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="je1-JZ-UMa"/>
+    </inferredMetricsTieBreakers>
 </document>
