@@ -22,39 +22,47 @@ class ShareApiController
     init(token: Token) {
         self.authToken = token;
     }
-    
-    func getContacts(success:(result: [Contact]) -> Void, error:(message: String?) -> Void)
+
+    func getContacts(pagenumber: NSString, pagesize: NSString, UserId: NSString, success:@escaping (_ token: NSDictionary) -> Void, error:@escaping (_ message: String?) -> Void)
     {
-        var msg: String = "[{ \"id\": \"618e033c-b399-4ff6-9dd2-3728b5af924a\", \"firstName\": \"David\", \"lastName\": \"Wachtel\" }";
-        msg += ", { \"id\": \"84a94f6f-5667-48fc-b3c5-a5803dd826e2\", \"firstName\": \"James\", \"lastName\": \"Majidian\" }";
-        msg += ", { \"id\": \"d089edfd-563c-41ed-9dab-aa9057403c89\", \"firstName\": \"Bryan\", \"lastName\": \"McCauley\" }]";
-        
-        
-        let data: NSData = msg.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!;
-        
-        var err: NSError?;
-        var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as? NSArray;
-        
-        var contactArr = Contact.toContact(json!);
-        contactArr.sort({ $0.lastName < $1.lastName });
-        
-        success(result: contactArr);
+        let request: HelperApiController = HelperApiController();
+        request.post(params: ["grant_type" : "password" as AnyObject, "UserId": UserId, "pagesize": pagesize,"pagenumber": pagenumber ], isJSON: false, url: HelperApiController.BaseUrl() + "api/Friends/getFriend", done: { (succeeded: Bool, data: NSDictionary) -> () in
+            
+            print(data)
+            if(succeeded)
+            {
+                success(data);
+            }
+            else
+            {
+                
+                if (data != nil)
+                {
+                    if (data["message"] != nil)
+                    {
+                        error(data["message"] as? String);
+                    }
+                    
+                }
+                error(nil);
+            }
+        });
     }
     
-    func shareAsset(assetId: Int, userIds: [String], success:() -> Void, error:(message: String?) -> Void)
+    func shareAsset(assetId: Int, userIds: [String], success:@escaping () -> Void, error:@escaping (_ message: String?) -> Void)
     {
         let path = HelperApiController.BaseUrl() + "api/share";
         let helper = HelperApiController();
         
-        var params: Dictionary<String, AnyObject> = ["AssetId" : assetId, "ToUserId" : userIds, "Message" : ""];
-        helper.post(params, isJSON: true, url: path, done: { (succeeded, data) -> () in
+        let params: Dictionary<String, AnyObject> = ["AssetId" : assetId as AnyObject, "ToUserId" : userIds as AnyObject, "Message" : "" as AnyObject];
+        helper.post(params: params, isJSON: true, url: path, done: { (succeeded, data) -> () in
             if(succeeded)
             {
                 success();
             }
             else
             {
-                error(message: "The system could not share.");
+                error("The system could not share.");
             }
         });
     }

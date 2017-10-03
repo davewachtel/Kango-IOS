@@ -10,7 +10,7 @@ import Foundation
 
 class CLInboxDetailView : UIView
 {
-    @IBAction func buttonTapped(AnyObject)
+    @IBAction func buttonTapped(_: AnyObject)
     {
         
     }

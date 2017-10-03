@@ -31,9 +31,11 @@ class Contact
             // Sometimes iTunes returns a collection, not a track, so we check both for the 'name'
             for result in allResults {
                 
-                let id = result["id"] as String;
-                let firstName = result["firstName"] as String;
-                let lastName = result["lastName"] as String;
+                let resultData = result as! NSDictionary
+                
+                let id = resultData["id"] as! String;
+                let firstName = resultData["firstName"] as! String;
+                let lastName = resultData["lastName"] as! String;
                 
                 let c = Contact(id: id, firstName: firstName, lastName: lastName);
                 contacts.append(c)

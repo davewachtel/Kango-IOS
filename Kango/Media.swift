@@ -39,12 +39,14 @@ class Media {
             // Sometimes iTunes returns a collection, not a track, so we check both for the 'name'
             for result in allResults {
                 
-                let id = result["id"] as Int;
-                let title = result["title"] as String;
-                let url = result["url"] as String;
-                let mediaTypeId = result["mediatype"] as Int;
+                let resultData = result as! NSDictionary
                 
-                var newMedia = Media(id: id, title: title, url: url, mediaTypeId: mediaTypeId);
+                let id = resultData["id"] as! Int;
+                let title = resultData["title"] as! String;
+                let url = resultData["url"] as! String;
+                let mediaTypeId = resultData["mediatype"] as! Int;
+                
+                let newMedia = Media(id: id, title: title, url: url, mediaTypeId: mediaTypeId);
                 medias.append(newMedia)
                 
             }

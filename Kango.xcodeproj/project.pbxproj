@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A61F0531DF6D8BE00A7CC39 /* iTunesArtWork in Resources */ = {isa = PBXBuildFile; fileRef = 5A61F0521DF6D8BE00A7CC39 /* iTunesArtWork */; };
+		5A63176E1DF06195008577E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A63176D1DF06195008577E5 /* Images.xcassets */; };
+		5A8097471DCA024F008BA878 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8097461DCA024F008BA878 /* ProfileViewController.swift */; };
+		5A8A95A21DD46743003B57B3 /* ChooseFrindsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A95A11DD46743003B57B3 /* ChooseFrindsViewController.swift */; };
+		5A8A95A41DD46D75003B57B3 /* FindFriendsCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A95A31DD46D75003B57B3 /* FindFriendsCC.swift */; };
+		5AB8B4651DCB1C580038E45A /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8B4641DCB1C580038E45A /* FindFriendsViewController.swift */; };
+		5ABBDF001DF7FD28009AD1F8 /* LoadingNew.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBDEFF1DF7FD28009AD1F8 /* LoadingNew.gif */; };
+		5AEAF9E11DCCA3AA00827BB1 /* Inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEAF9DE1DCCA3AA00827BB1 /* Inbox.png */; };
+		5AEAF9E21DCCA3AA00827BB1 /* FindFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEAF9DF1DCCA3AA00827BB1 /* FindFriend.png */; };
+		5AEAF9E31DCCA3AA00827BB1 /* Stream.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEAF9E01DCCA3AA00827BB1 /* Stream.png */; };
+		5AEDA3531DDB43FD00F2A71D /* FirstShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEDA3521DDB43FD00F2A71D /* FirstShowViewController.swift */; };
 		852C9E2B19D125370036D3FC /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852C9E2A19D125370036D3FC /* ImageIO.framework */; };
 		852DEB7C1A21B3A300BDB76E /* LoginApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7B1A21B3A300BDB76E /* LoginApiController.swift */; };
 		852DEB7E1A21BABB00BDB76E /* HelperApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852DEB7D1A21BABB00BDB76E /* HelperApiController.swift */; };
@@ -21,7 +32,7 @@
 		853D27471A4781170079337F /* no_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853D27461A4781170079337F /* no_image@2x.png */; };
 		853EBA1E1A18770400B28C99 /* CLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853EBA1D1A18770400B28C99 /* CLLoginViewController.swift */; };
 		854B080F1A252787003FA04B /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 854B080E1A252787003FA04B /* libGoogleAnalyticsServices.a */; };
-		854B08131A25279E003FA04B /* 404@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 854B08101A25279E003FA04B /* 404@2x.jpg */; };
+		854B08131A25279E003FA04B /* 404@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 854B08101A25279E003FA04B /* 404@2x.png */; };
 		854B08141A25279E003FA04B /* checkmark_300x300@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 854B08111A25279E003FA04B /* checkmark_300x300@2x.png */; };
 		854B08151A25279E003FA04B /* cross_300x300@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 854B08121A25279E003FA04B /* cross_300x300@2x.png */; };
 		854B08191A2527BF003FA04B /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 854B08181A2527BF003FA04B /* UIImage+animatedGIF.m */; };
@@ -34,7 +45,6 @@
 		8598A8BC19A5A3D500D09531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8BB19A5A3D500D09531 /* AppDelegate.swift */; };
 		8598A8BE19A5A3D500D09531 /* CLPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8BD19A5A3D500D09531 /* CLPlaygroundViewController.swift */; };
 		8598A8C119A5A3D500D09531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8598A8BF19A5A3D500D09531 /* Main.storyboard */; };
-		8598A8C319A5A3D500D09531 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8598A8C219A5A3D500D09531 /* Images.xcassets */; };
 		8598A8DE19A5A7EA00D09531 /* CLDraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8DD19A5A7EA00D09531 /* CLDraggableView.swift */; };
 		8598A8E019A5A93800D09531 /* CLOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598A8DF19A5A93800D09531 /* CLOverlayView.swift */; };
 		859B71CD19E507E0008D481C /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B71CC19E507E0008D481C /* Media.swift */; };
@@ -64,6 +74,13 @@
 		85F64C1D1A3FE9B0000B95FC /* InboxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F64C1C1A3FE9B0000B95FC /* InboxMessage.swift */; };
 		85FB00A51A4615E90084F3FF /* CLInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FB00A41A4615E90084F3FF /* CLInstance.swift */; };
 		85FB00A71A461D050084F3FF /* CLInboxDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FB00A61A461D050084F3FF /* CLInboxDetailViewController.swift */; };
+		E64733A71DBE3E1F009DCCB8 /* SignupEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64733A61DBE3E1F009DCCB8 /* SignupEmailViewController.swift */; };
+		E67F73D81DB8C48B00C88AF4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E67F73D71DB8C48B00C88AF4 /* Launch Screen.storyboard */; };
+		E67F73DA1DB9093200C88AF4 /* extensionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67F73D91DB9093200C88AF4 /* extensionClass.swift */; };
+		E6ED29881DBF51720056357A /* CommonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ED29871DBF51720056357A /* CommonClass.swift */; };
+		E6ED298A1DBF57760056357A /* SignupPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ED29891DBF57760056357A /* SignupPasswordViewController.swift */; };
+		E6ED298C1DBF8C080056357A /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6ED298B1DBF8C080056357A /* Contacts.framework */; };
+		E6ED298E1DBF8C1F0056357A /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ED298D1DBF8C1F0056357A /* PhoneNumberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +94,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A5F4EB31DDEDF6600338F34 /* Kango.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Kango.entitlements; path = Kango/Kango.entitlements; sourceTree = "<group>"; };
+		5A61F0521DF6D8BE00A7CC39 /* iTunesArtWork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtWork; sourceTree = "<group>"; };
+		5A63176D1DF06195008577E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5A8097461DCA024F008BA878 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5A8A95A11DD46743003B57B3 /* ChooseFrindsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFrindsViewController.swift; sourceTree = "<group>"; };
+		5A8A95A31DD46D75003B57B3 /* FindFriendsCC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendsCC.swift; sourceTree = "<group>"; };
+		5AB8B4641DCB1C580038E45A /* FindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
+		5ABBDEFF1DF7FD28009AD1F8 /* LoadingNew.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoadingNew.gif; sourceTree = "<group>"; };
+		5AEAF9DE1DCCA3AA00827BB1 /* Inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Inbox.png; sourceTree = "<group>"; };
+		5AEAF9DF1DCCA3AA00827BB1 /* FindFriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FindFriend.png; sourceTree = "<group>"; };
+		5AEAF9E01DCCA3AA00827BB1 /* Stream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stream.png; sourceTree = "<group>"; };
+		5AEDA3521DDB43FD00F2A71D /* FirstShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstShowViewController.swift; sourceTree = "<group>"; };
 		852C9E2A19D125370036D3FC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		852DEB7B1A21B3A300BDB76E /* LoginApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginApiController.swift; sourceTree = "<group>"; };
 		852DEB7D1A21BABB00BDB76E /* HelperApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperApiController.swift; sourceTree = "<group>"; };
@@ -102,7 +131,7 @@
 		854B080C1A252787003FA04B /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Kango/3rdParty/GoogleAnalytics/GAITrackedViewController.h; sourceTree = "<group>"; };
 		854B080D1A252787003FA04B /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Kango/3rdParty/GoogleAnalytics/GAITracker.h; sourceTree = "<group>"; };
 		854B080E1A252787003FA04B /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = Kango/3rdParty/GoogleAnalytics/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
-		854B08101A25279E003FA04B /* 404@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "404@2x.jpg"; path = "Kango/3rdParty/404@2x.jpg"; sourceTree = "<group>"; };
+		854B08101A25279E003FA04B /* 404@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "404@2x.png"; path = "Kango/3rdParty/404@2x.png"; sourceTree = "<group>"; };
 		854B08111A25279E003FA04B /* checkmark_300x300@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkmark_300x300@2x.png"; path = "Kango/3rdParty/checkmark_300x300@2x.png"; sourceTree = "<group>"; };
 		854B08121A25279E003FA04B /* cross_300x300@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cross_300x300@2x.png"; path = "Kango/3rdParty/cross_300x300@2x.png"; sourceTree = "<group>"; };
 		854B08171A2527BF003FA04B /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+animatedGIF.h"; path = "Kango/3rdParty/Gif/UIImage+animatedGIF.h"; sourceTree = "<group>"; };
@@ -118,7 +147,6 @@
 		8598A8BB19A5A3D500D09531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8598A8BD19A5A3D500D09531 /* CLPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLPlaygroundViewController.swift; sourceTree = "<group>"; };
 		8598A8C019A5A3D500D09531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8598A8C219A5A3D500D09531 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8598A8C819A5A3D500D09531 /* KangoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KangoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8598A8CD19A5A3D500D09531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8598A8DD19A5A7EA00D09531 /* CLDraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLDraggableView.swift; sourceTree = "<group>"; };
@@ -148,6 +176,13 @@
 		85F64C1C1A3FE9B0000B95FC /* InboxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxMessage.swift; sourceTree = "<group>"; };
 		85FB00A41A4615E90084F3FF /* CLInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLInstance.swift; sourceTree = "<group>"; };
 		85FB00A61A461D050084F3FF /* CLInboxDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLInboxDetailViewController.swift; sourceTree = "<group>"; };
+		E64733A61DBE3E1F009DCCB8 /* SignupEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupEmailViewController.swift; sourceTree = "<group>"; };
+		E67F73D71DB8C48B00C88AF4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E67F73D91DB9093200C88AF4 /* extensionClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionClass.swift; sourceTree = "<group>"; };
+		E6ED29871DBF51720056357A /* CommonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonClass.swift; sourceTree = "<group>"; };
+		E6ED29891DBF57760056357A /* SignupPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPasswordViewController.swift; sourceTree = "<group>"; };
+		E6ED298B1DBF8C080056357A /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		E6ED298D1DBF8C1F0056357A /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6ED298C1DBF8C080056357A /* Contacts.framework in Frameworks */,
 				8564D38A1A17CE4300D8135E /* libz.dylib in Frameworks */,
 				8564D3881A17CE2600D8135E /* SystemConfiguration.framework in Frameworks */,
 				8564D3861A17CE1C00D8135E /* CoreData.framework in Frameworks */,
@@ -176,6 +212,7 @@
 		852C9E2C19D1272D0036D3FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6ED298B1DBF8C080056357A /* Contacts.framework */,
 				8564D3891A17CE4300D8135E /* libz.dylib */,
 				8564D3871A17CE2600D8135E /* SystemConfiguration.framework */,
 				8564D3851A17CE1C00D8135E /* CoreData.framework */,
@@ -200,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				853D27441A477D870079337F /* CLInboxTableViewCell.swift */,
+				5A8A95A31DD46D75003B57B3 /* FindFriendsCC.swift */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -212,9 +250,11 @@
 				854B08161A2527B4003FA04B /* GIF */,
 				854B08031A252774003FA04B /* GoogleAnalytics */,
 				85E444B31A59F736002477D8 /* Kango-Bridging-Header.h */,
-				854B08101A25279E003FA04B /* 404@2x.jpg */,
+				5ABBDEFF1DF7FD28009AD1F8 /* LoadingNew.gif */,
+				854B08101A25279E003FA04B /* 404@2x.png */,
 				854B08111A25279E003FA04B /* checkmark_300x300@2x.png */,
 				854B08121A25279E003FA04B /* cross_300x300@2x.png */,
+				E67F73D91DB9093200C88AF4 /* extensionClass.swift */,
 			);
 			name = 3rdParty;
 			sourceTree = "<group>";
@@ -249,6 +289,9 @@
 		8598A8AD19A5A3D500D09531 = {
 			isa = PBXGroup;
 			children = (
+				5A5F4EB31DDEDF6600338F34 /* Kango.entitlements */,
+				5A61F0521DF6D8BE00A7CC39 /* iTunesArtWork */,
+				5A63176D1DF06195008577E5 /* Images.xcassets */,
 				852C9E2C19D1272D0036D3FC /* Frameworks */,
 				854B08021A252764003FA04B /* 3rdParty */,
 				85F64BFB1A3E97E2000B95FC /* Images */,
@@ -276,7 +319,7 @@
 				8598A8D819A5A7A100D09531 /* View */,
 				8598A8BB19A5A3D500D09531 /* AppDelegate.swift */,
 				8598A8BF19A5A3D500D09531 /* Main.storyboard */,
-				8598A8C219A5A3D500D09531 /* Images.xcassets */,
+				E67F73D71DB8C48B00C88AF4 /* Launch Screen.storyboard */,
 				8598A8B919A5A3D500D09531 /* Supporting Files */,
 			);
 			name = Main;
@@ -334,6 +377,13 @@
 				85FB00A61A461D050084F3FF /* CLInboxDetailViewController.swift */,
 				85B37E801A467DC500057DC1 /* CLDraggableViewController.swift */,
 				8534EB331A4CCF4400B0B66D /* CLShareViewController.swift */,
+				E64733A61DBE3E1F009DCCB8 /* SignupEmailViewController.swift */,
+				E6ED29891DBF57760056357A /* SignupPasswordViewController.swift */,
+				E6ED298D1DBF8C1F0056357A /* PhoneNumberViewController.swift */,
+				5A8097461DCA024F008BA878 /* ProfileViewController.swift */,
+				5AB8B4641DCB1C580038E45A /* FindFriendsViewController.swift */,
+				5A8A95A11DD46743003B57B3 /* ChooseFrindsViewController.swift */,
+				5AEDA3521DDB43FD00F2A71D /* FirstShowViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -341,6 +391,7 @@
 		8598A8DA19A5A7B700D09531 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E6ED29871DBF51720056357A /* CommonClass.swift */,
 				8534EB351A4CCF7500B0B66D /* Contact.swift */,
 				859B71CC19E507E0008D481C /* Media.swift */,
 				852DEB7F1A21CD9000BDB76E /* Token.swift */,
@@ -354,6 +405,9 @@
 		85F64BFB1A3E97E2000B95FC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5AEAF9DE1DCCA3AA00827BB1 /* Inbox.png */,
+				5AEAF9DF1DCCA3AA00827BB1 /* FindFriend.png */,
+				5AEAF9E01DCCA3AA00827BB1 /* Stream.png */,
 				853D27461A4781170079337F /* no_image@2x.png */,
 				85F64BFC1A3E97FF000B95FC /* Background.jpg */,
 				85F64BFD1A3E97FF000B95FC /* burger.png */,
@@ -415,15 +469,29 @@
 		8598A8AE19A5A3D500D09531 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Cornice Labs";
 				TargetAttributes = {
 					8598A8B519A5A3D500D09531 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 536BCFD72E;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					8598A8C719A5A3D500D09531 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 6585CSZ6DA;
+						LastSwiftMigration = 0800;
 						TestTargetID = 8598A8B519A5A3D500D09531;
 					};
 				};
@@ -453,19 +521,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				85F64C0B1A3E97FF000B95FC /* click.gif in Resources */,
+				5A63176E1DF06195008577E5 /* Images.xcassets in Resources */,
+				5AEAF9E31DCCA3AA00827BB1 /* Stream.png in Resources */,
 				853D27471A4781170079337F /* no_image@2x.png in Resources */,
+				5AEAF9E21DCCA3AA00827BB1 /* FindFriend.png in Resources */,
 				85F64C0F1A3E97FF000B95FC /* globe@2x.png in Resources */,
+				5A61F0531DF6D8BE00A7CC39 /* iTunesArtWork in Resources */,
 				854B08151A25279E003FA04B /* cross_300x300@2x.png in Resources */,
 				85F64C0A1A3E97FF000B95FC /* burger@2x.png in Resources */,
 				8598A8C119A5A3D500D09531 /* Main.storyboard in Resources */,
+				5ABBDF001DF7FD28009AD1F8 /* LoadingNew.gif in Resources */,
 				85F64C121A3E97FF000B95FC /* star.png in Resources */,
 				85F64C0D1A3E97FF000B95FC /* gear@2x.png in Resources */,
+				5AEAF9E11DCCA3AA00827BB1 /* Inbox.png in Resources */,
+				E67F73D81DB8C48B00C88AF4 /* Launch Screen.storyboard in Resources */,
 				854B08141A25279E003FA04B /* checkmark_300x300@2x.png in Resources */,
 				85F64C091A3E97FF000B95FC /* burger.png in Resources */,
 				85F64C0C1A3E97FF000B95FC /* gear.png in Resources */,
-				8598A8C319A5A3D500D09531 /* Images.xcassets in Resources */,
 				85F64C0E1A3E97FF000B95FC /* globe.png in Resources */,
-				854B08131A25279E003FA04B /* 404@2x.jpg in Resources */,
+				854B08131A25279E003FA04B /* 404@2x.png in Resources */,
 				85F64C081A3E97FF000B95FC /* Background.jpg in Resources */,
 				85F64C131A3E97FF000B95FC /* star@2x.png in Resources */,
 				85F64C101A3E97FF000B95FC /* profile.png in Resources */,
@@ -487,7 +561,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8A95A41DD46D75003B57B3 /* FindFriendsCC.swift in Sources */,
+				E6ED29881DBF51720056357A /* CommonClass.swift in Sources */,
 				8598A8E019A5A93800D09531 /* CLOverlayView.swift in Sources */,
+				5A8A95A21DD46743003B57B3 /* ChooseFrindsViewController.swift in Sources */,
 				85A326EB19E4EB32000E1FB5 /* MediaApiController.swift in Sources */,
 				853D27451A477D870079337F /* CLInboxTableViewCell.swift in Sources */,
 				85F64C1D1A3FE9B0000B95FC /* InboxMessage.swift in Sources */,
@@ -510,13 +587,20 @@
 				854B081B1A25B20B003FA04B /* CLPlaygroundView.swift in Sources */,
 				8598A8DE19A5A7EA00D09531 /* CLDraggableView.swift in Sources */,
 				85B37E831A469F9200057DC1 /* CLInboxDetailView.swift in Sources */,
+				E67F73DA1DB9093200C88AF4 /* extensionClass.swift in Sources */,
+				E6ED298A1DBF57760056357A /* SignupPasswordViewController.swift in Sources */,
 				852DEB7C1A21B3A300BDB76E /* LoginApiController.swift in Sources */,
 				85B37E811A467DC500057DC1 /* CLDraggableViewController.swift in Sources */,
+				5AEDA3531DDB43FD00F2A71D /* FirstShowViewController.swift in Sources */,
+				5A8097471DCA024F008BA878 /* ProfileViewController.swift in Sources */,
 				853CEA1F1A2C071F009EFAD1 /* MediaImage.swift in Sources */,
+				E64733A71DBE3E1F009DCCB8 /* SignupEmailViewController.swift in Sources */,
 				85E444B61A59F74F002477D8 /* FrostedSidebar.swift in Sources */,
+				5AB8B4651DCB1C580038E45A /* FindFriendsViewController.swift in Sources */,
 				8534EB301A4CCD1200B0B66D /* ShareApiController.swift in Sources */,
 				85F64C151A3E9895000B95FC /* CLTabBarController.swift in Sources */,
 				856E0CFF1A4A86BB00ABB0DC /* InboxApiController.swift in Sources */,
+				E6ED298E1DBF8C1F0056357A /* PhoneNumberViewController.swift in Sources */,
 				85FB00A71A461D050084F3FF /* CLInboxDetailViewController.swift in Sources */,
 				854B08191A2527BF003FA04B /* UIImage+animatedGIF.m in Sources */,
 			);
@@ -572,6 +656,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 6585CSZ6DA;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -634,13 +719,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Kango/Kango.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: David Wachtel (85XDJ5PLX7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Wachtel (85XDJ5PLX7)";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 536BCFD72E;
+				"DEVELOPMENT_TEAM[sdk=*]" = 536BCFD72E;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Kango/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,10 +744,13 @@
 					Party/GoogleAnalytics,
 					"$(PROJECT_DIR)/Kango/3rdParty/GoogleAnalytics",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cornicelabs.kango;
 				PRODUCT_NAME = Kango;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a9440d3a-47cf-4787-8625-0a651ba667cd";
+				PROVISIONING_PROFILE_SPECIFIER = "Development iOS: com.cornicelabs.kango";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kango/Kango-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -667,13 +758,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Kango/Kango.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: David Wachtel (536BCFD72E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: David Wachtel (536BCFD72E)";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 536BCFD72E;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Kango/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -689,9 +782,12 @@
 					Party/GoogleAnalytics,
 					"$(PROJECT_DIR)/Kango/3rdParty/GoogleAnalytics",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cornicelabs.kango;
 				PRODUCT_NAME = Kango;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "54d479af-7b9b-4258-98c1-1ae1cbbe5d6b";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.cornicelabs.kango";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kango/Kango-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -711,6 +807,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = KangoTests;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -727,6 +824,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = KangoTests;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;

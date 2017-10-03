@@ -20,8 +20,8 @@ class CLOverlayView : UIView
     var imageView: UIImageView;
     var mode: CLOverlayViewMode;
     
-    required init(coder aDecoder: NSCoder) {
-        self.imageView = UIImageView(coder: aDecoder);
+    required init?(coder aDecoder: NSCoder) {
+        self.imageView = UIImageView(coder: aDecoder)!;
         self.mode = CLOverlayViewMode.CLOverlayViewModeNone;
         
         super.init(coder: aDecoder);
@@ -43,7 +43,7 @@ class CLOverlayView : UIView
             }
             
             self.imageView.image = UIImage(named: imgSrc);
-            self.imageView.contentMode = UIViewContentMode.ScaleAspectFit;
+            self.imageView.contentMode = UIViewContentMode.center;
         }
     }
     

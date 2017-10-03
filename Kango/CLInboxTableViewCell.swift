@@ -23,17 +23,17 @@ class CLInboxTableViewCell : UITableViewCell
         //self.lblMessage.text = msg.media.title;
         if(!msg.isRead)
         {
-            self.backgroundColor = UIColor.lightGrayColor();
+            self.backgroundColor = UIColor.lightGray;
         }
         else
         {
-            self.backgroundColor = UIColor.whiteColor();
+            self.backgroundColor = UIColor.white;
         }
         
-        self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
+        self.accessoryType = UITableViewCellAccessoryType.disclosureIndicator;
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     
         // Configure the view for the selected state

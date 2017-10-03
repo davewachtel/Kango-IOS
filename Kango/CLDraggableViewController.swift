@@ -22,26 +22,32 @@ class CLDraggableViewController : GAITrackedViewController, CLDraggableViewProto
     var notFound:UIImage;
     
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         
-        self.draggableView = CLDraggableView(coder: aDecoder);
-        self.activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge);
-        self.notFound = UIImage(named: "404.jpg")!;
+        self.draggableView = CLDraggableView(coder: aDecoder)!;
+        self.activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge);
+        self.notFound = UIImage(named: "404.png")!;
         
         super.init(coder: aDecoder);
         
-        var vBounds = UIScreen.mainScreen().bounds;
+        let vBounds = UIScreen.main.bounds;
         self.draggableView.bounds = vBounds;
         self.draggableView.frame = vBounds;
         
+        
         self.draggableView.delegate = self;
     }
+    
+    
+
     
     //Start
     override func loadView() {
         super.loadView();
         
-        self.view.backgroundColor = UIColor.blackColor();
+        
+        
+//        self.view.backgroundColor = UIColor.black;
         
         self.view = self.draggableView;
         //self.view.addSubview(self.draggableView);
@@ -52,26 +58,60 @@ class CLDraggableViewController : GAITrackedViewController, CLDraggableViewProto
         self.view.addSubview(activityView);
     }
     
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        draggableView.AddShare()
+    }
+ 
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        draggableView.RemoveShareButton()
+    }
+    
+    
     func share()
     {
-        self.performSegueWithIdentifier("Share", sender: self);
+   
+//        if(Thread.isMainThread)
+//        {
+//             DispatchQueue.main.sync(execute: {
+//            self.draggableView.RemoveShareButton()
+//            self.performSegue(withIdentifier: "Share", sender: self);
+//            }
+//        }
+//        else
+//        {
+            DispatchQueue.main.async(execute: {
+                self.draggableView.RemoveShareButton()
+                self.performSegue(withIdentifier: "Share", sender: self);
+            });
+//        }
+
+        
+//        self.performSegue(withIdentifier: "Share", sender: self);
     }
     
     func removeCurrentView(wasLiked: Bool)
     {
-        onRemove(wasLiked);
+        onRemove(wasLiked: wasLiked);
     }
     
     func onRemove(wasLiked: Bool)
     {
         
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        draggableView.RemoveShareButton()
+        
         if(segue.identifier == "Share")
         {
             
-            var shareVC = segue.destinationViewController as CLShareViewController;
+            let shareVC = segue.destination as! CLShareViewController;
             if(self.draggableView.mediaImage != nil)
             {
                 if(self.draggableView.mediaImage!.media != nil)
@@ -80,22 +120,26 @@ class CLDraggableViewController : GAITrackedViewController, CLDraggableViewProto
                     shareVC.assetId = self.draggableView.mediaImage!.media!.id;
                 }
             }
-
+            
         }
+
     }
     
     func setMedia(media: MediaImage?)
     {
+        
         if(media?.media == nil)
         {
-            self.draggableView.setMedia(MediaImage(media: nil, img: self.notFound));
+            let filePath = Bundle.main.path(forResource: "LoadingNew", ofType: "gif")
+            var gifData = NSData.dataWithContentsOfMappedFile((filePath)!)
+            self.draggableView.setMedia(media: MediaImage(media: nil, img: UIImage.animatedImage(withAnimatedGIFData: gifData as! Data!)));
         }
         else
         {
-            self.draggableView.setMedia(media!);
+            self.draggableView.setMedia(media: media!);
         }
         
-        if(self.activityView.isAnimating())
+        if(self.activityView.isAnimating)
         {
             self.activityView.stopAnimating();
         }

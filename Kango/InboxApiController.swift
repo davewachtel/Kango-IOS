@@ -26,24 +26,54 @@ class InboxApiController {
         self.authToken = token;
     }
     
-    func getInbox(userId: String, success:(msgArray: [InboxMessage]) -> Void, error:(message: String?) -> Void)
+    func getInbox(userId: String, success:@escaping (_ msgArray: [InboxMessage]) -> Void, error:@escaping (_ message: String?) -> Void)
     {
         let path = HelperApiController.BaseUrl() + "api/user/" + userId + "/inbox";
         
-        var helper = HelperApiController();
-        helper.get(nil, url: path, { (succeeded, data) -> () in
+        let helper = HelperApiController();
+        helper.get(params: nil, url: path, done: { (succeeded, data) -> () in
             if(succeeded)
             {
-                let results: NSArray = data["data"] as NSArray;
-                let msgArr = InboxMessage.toMessage(results);
-                success(msgArray: msgArr);
+                let results: NSArray = data["data"] as! NSArray;
+                let msgArr = InboxMessage.toMessage(allResults: results);
+                success(msgArr);
                 
                 //success
             }
             else
             {
-                error(message: "message: The system is unable to retrieve your Inbox.");
+                error("message: The system is unable to retrieve your Inbox.");
             }
         });
     }
+    
+    func MarkMessage(userId: String,MessageID: String,  success:@escaping (_ token: NSDictionary) -> Void, error:@escaping (_ message: String?) -> Void)
+    {
+        let path = HelperApiController.BaseUrl() + "api/user/" + userId + "/inbox";
+        
+        let helper = HelperApiController();
+        helper.post(params: ["MessageId" : MessageID as AnyObject, "read": "1" as AnyObject], isJSON: false, url: path, done: { (succeeded: Bool, data: NSDictionary) -> () in
+            
+            print(data)
+            print(succeeded)
+            if(succeeded)
+            {
+                success(data);
+            }
+            else
+            {
+                
+                if (data != nil)
+                {
+                    if (data["message"] != nil)
+                    {
+                        error(data["message"] as? String);
+                    }
+                    
+                }
+                error(nil);
+            }
+        });
+    }
+    
 }

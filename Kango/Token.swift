@@ -21,37 +21,56 @@ import Foundation
 
 class Token {
     
-    var dicData: NSDictionary;
-    
-    init(data: NSDictionary)  {
+    var dicData: Dictionary<String, Any>;
+
+    init(data: Dictionary<String, Any>)  {
         self.dicData = data;
     }
     
+//    func setPassword(password: String)
+//    {
+//        return self.dicData["password"] = password//.object(forKey: "access_token") as! String;
+//    }
+
+    
     func getToken() -> String
     {
-            return self.dicData.objectForKey("access_token") as String;
+//            return self.dicData.object(forKey: "access_token") as! String;
+        return self.dicData["access_token"] as! String
     }
     
     func getUserId() -> String
     {
-        return self.dicData.objectForKey("userId") as String;
+          return self.dicData["userId"] as! String
+//        return self.dicData.object(forKey: "userId") as! String;
     }
     
     func getUsername() -> String
     {
-        return self.dicData.objectForKey("userName") as String;
+          return self.dicData["userName"] as! String
+//        return self.dicData.object(forKey: "userName") as! String;
     }
+    
+    func getPassword() -> String?
+    {
+          return self.dicData["password"] as? String
+//        return self.dicData.object(forKey: "password") as! String;
+    }
+    
     func getType() -> String
     {
-        return self.dicData.objectForKey("token_type") as String;
+          return self.dicData["token_type"] as! String
+//        return self.dicData.object(forKey: "token_type") as! String;
     }
     
     func isExpired() -> Bool
     {
-        var strExpires = self.dicData.objectForKey(".expires") as String;
-        var date: NSDate = parseDate(strExpires);
-        var utc: NSDate = NSDate();
-        if(date.compare(utc) == NSComparisonResult.OrderedDescending)
+  
+        let strExpires = self.dicData[".expires"] as! String
+//self.dicData.object(forKey: ".expires") as! String;
+        let date: NSDate = parseDate(strDate: strExpires);
+        let utc: NSDate = NSDate();
+        if(date.compare(utc as Date) == ComparisonResult.orderedDescending)
         {
             return false;
         }
@@ -61,24 +80,26 @@ class Token {
     
     func parseDate(strDate: String) -> NSDate
     {
-        var formatter = NSDateFormatter();
-        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0);
+        let formatter = DateFormatter();
+        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0) as TimeZone!;
         formatter.dateFormat = "EEE, d MMM yyyy HH:mm:ss z";
         
-        var date = formatter.dateFromString(strDate);
-        return date!;
+        let date = formatter.date(from: strDate);
+        return date! as NSDate;
     }
     
     class func loadValidToken() -> Token?
     {
-        var defaults =  NSUserDefaults.standardUserDefaults();
-        var obj: AnyObject? = defaults.objectForKey("token");
+        let defaults =  UserDefaults.standard;
+        let obj: AnyObject? = defaults.object(forKey: "token") as AnyObject?;
         
         if(obj != nil)
         {
-            var jsonStr = obj as NSDictionary;
+            let jsonStr = obj as! NSDictionary;
         
-            var token = Token(data: jsonStr);
+//              return self.dicData["userId"] as! String
+            
+            let token = Token(data: jsonStr as! Dictionary<String, Any> )// as! NSMutableDictionary);
             if(token.isExpired())
             {
                 Token.clearToken();
@@ -93,13 +114,13 @@ class Token {
     
     class func clearToken() -> Void
     {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("token");
+        UserDefaults.standard.removeObject(forKey: "token");
     }
     
     func saveToken() -> Bool
     {
-        var defaults =  NSUserDefaults.standardUserDefaults();
-        defaults.setObject(self.dicData, forKey: "token");
+        let defaults =  UserDefaults.standard;
+        defaults.set(self.dicData, forKey: "token");
         
         return defaults.synchronize();
     }

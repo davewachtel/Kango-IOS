@@ -9,43 +9,84 @@
 import Foundation
 
 protocol CLLoginViewDelegate {
-    func authenticate(username: String, password: String, completion: () -> Void);
+    func authenticate(username: String, password: String, completion: @escaping () -> Void);
+    func BackBTn();
+    func ShowError(string : String,heading : String);
 }
 
 class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
 {
     var api = LoginApiController();
     
-    func authenticate(username: String, password: String, completion: () -> Void) {
+    func authenticate(username: String, password: String, completion: @escaping () -> Void) {
         
-        api.login(username
-            , password: password
+        let loginView = self.view as! CLLoginView;
+        loginView.heightError.constant = 0.0
+        loginView.btnCross.isHidden = true
+        
+        api.login(username: username as NSString
+            , password: password as NSString
             , success: {
                 (token: Token) -> () in
-                    self.login_success(token);
+//
+//                DispatchQueue.main.async(execute: {
+//                    token.setPassword(password: password)
+                    _ = token.saveToken()
+//                })
+                    self.login_success(token: token);
                     completion();
                 
             },
             error: {
                 (message: String?) -> () in
-                    self.login_failed(message);
+                    self.login_failed(message: message);
                     completion();
         });
     }
     
+    
+    static func authenticateAccount(username: String, password: String, completion: @escaping () -> Void) {
+       
+        let api = LoginApiController();
+        
+        api.login(username: username as NSString
+            , password: password as NSString
+            , success: {
+                (token: Token) -> () in
+                
+//                DispatchQueue.main.async( execute:{
+//                    token.setPassword(password: password)
+                    _ = token.saveToken()
+
+//                })
+
+                completion();
+                
+        },
+              error: {
+                (message: String?) -> () in
+                completion();
+        });
+    }
+    
+    func BackBTn()
+    {
+     _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     func login_success(token: Token) -> Void
     {
-        var success = token.saveToken();
         CLInstance.sharedInstance.authToken = token;
         
-        if(NSThread.isMainThread())
+        if(Thread.isMainThread)
         {
-             self.performSegueWithIdentifier("LoginSuccessSegue", sender: self);
+             self.performSegue(withIdentifier: "LoginSuccessSegue", sender: self);
         }
         else
         {
-            dispatch_sync(dispatch_get_main_queue(), {
-                self.performSegueWithIdentifier("LoginSuccessSegue", sender: self);
+            DispatchQueue.main.sync(execute: {
+                self.performSegue(withIdentifier: "LoginSuccessSegue", sender: self);
             });
         }
         
@@ -53,67 +94,75 @@ class CLLoginViewController : GAITrackedViewController, CLLoginViewDelegate
     
     func login_failed(message: String?) -> Void
     {
-        var msg: String = "Your login was incorrect.  Please try again.";
-        if(message != nil)
-        {
-            msg = message!;
-        }
+        print("=============>  login_failed")
         
-        dispatch_sync(dispatch_get_main_queue(), {
+        DispatchQueue.main.sync(execute: {
+            let loginView = self.view as! CLLoginView;
+            loginView.heightError.constant = 35.0
+            loginView.btnCross.isHidden = false
             
-            /* Do UI work here */
-            var alert = SCLAlertView(parent: self.view);
-            alert.showError("Oops!", subTitle: msg, closeButtonTitle: "OK", duration: NSTimeInterval(3));
+            loginView.txtPassword.inputAccessoryView = nil;
+            loginView.txtUsername.inputAccessoryView = nil;
+            loginView.txtUsername.reloadInputViews()
+            loginView.txtPassword.reloadInputViews()
             
         });
+        
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let loginView = self.view as! CLLoginView;
+        
+        loginView.txtPassword.DrawLine()
+        loginView.txtUsername.DrawLine()
+        loginView.CustomAccessoryView(textField: loginView.txtPassword)
+        loginView.CustomAccessoryView(textField: loginView.txtUsername)
+        loginView.txtUsername.becomeFirstResponder()
+        loginView.spinner.isHidden = true
+    }
+       
+    
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
-        //Track Screen
-        self.screenName = "Login";
+        let loginView = self.view as! CLLoginView;
+        loginView.heightError.constant = 0.0
+        loginView.btnCross.isHidden = true
         
+        self.screenName = "Login";
     }
     
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        var loginView = self.view as CLLoginView;
+        let loginView = self.view as! CLLoginView;
         loginView.delegate = self;
+        loginView.spinner.isHidden = true
         
+        self.navigationController?.isNavigationBarHidden = true
         
-        var token = Token.loadValidToken();
-        if(token != nil)
-        {
-            var alert = SCLAlertView(parent: self.view);
-            alert.addButton("Do it!") {
-                self.login_success(token!);
-            }
-            
-            alert.addButton("No, thanks...") {
-                Token.clearToken();
-                self.navigationController?.popViewControllerAnimated(true);
-            };
-            var username = token!.getUsername();
-            alert.showTitle("Login", subTitle: "Would you like to login as " + username + "?", duration: NSTimeInterval(10), completeText: nil, style: SCLAlertViewStyle.Info);
-        }
     }
-    
-    
-    
-    override func supportedInterfaceOrientations() -> Int {
-        
-        return Int(UIInterfaceOrientationMask.Portrait.rawValue);
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender);
+
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepare(for: segue, sender: sender);
         
         if(segue.identifier == "LoginSuccessSegue")
         {
             
         }
+    }
+    
+    
+    func ShowError(string : String,heading : String) {
+        let alertController = UIAlertController(title: heading, message: string, preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        self.present(alertController, animated: true, completion: {
+            
+        })
     }
 
 }

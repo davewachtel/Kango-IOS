@@ -12,17 +12,21 @@ class InboxMessage
 {
     var assetId: Int;
     var fromUser: String;
+    var phoneNumber: String;
     var msg: String;
     var timeAgo: String;
+    var msgID: String;
     var isRead : Bool;
     
-    init(assetId: Int, fromUser: String, msg: String, timeAgo: String, isRead: Bool)
+    init(assetId: Int, fromUser: String, phoneNumber: String, msg: String, timeAgo: String, isRead: Bool, MessageID: String)
     {
         self.assetId = assetId;
         self.fromUser = fromUser;
+        self.phoneNumber = phoneNumber;
         self.msg = msg;
         self.timeAgo = timeAgo;
         self.isRead = isRead;
+        self.msgID = MessageID;
     }
     
     
@@ -37,13 +41,26 @@ class InboxMessage
             // Sometimes iTunes returns a collection, not a track, so we check both for the 'name'
             for result in allResults {
                 
-                let assetId = result["assetid"] as Int;
-                let fromUser = result["fromuser"] as String;
-                let message = "";
-                let timeago = result["timeago"] as String;
-                let isRead = result["isread"] as Bool;
                 
-                var msg = InboxMessage(assetId: assetId, fromUser: fromUser, msg: message, timeAgo: timeago, isRead: isRead);
+                let resultData = result as! NSDictionary
+                
+                let assetId = resultData["assetid"] as! Int;
+                let fromUser = resultData["fromuser"] as! String;
+                
+                var phoneNumber = ""
+                
+                if let phone = resultData["phone"] as? String
+                {
+                    phoneNumber = phone
+                }
+                
+                let message = "";
+                let timeago = resultData["timeago"] as! String;
+                let idMessage = Int((resultData["messageid"] as AnyObject) as! NSNumber)
+                let messageID = String(idMessage);
+                let isRead = resultData["isread"] as! Bool;
+
+                let msg = InboxMessage(assetId: assetId, fromUser: fromUser, phoneNumber: phoneNumber, msg: message, timeAgo: timeago, isRead: isRead , MessageID : messageID)
                 messages.append(msg)
             }
         }
